@@ -12,6 +12,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
     this.controller,
     this.readOnly,
     this.validator,
+    this.onTap,
   });
   final String labelText;
   final Widget? suffixIcon;
@@ -19,10 +20,12 @@ class CustomAddInvestmentTextField extends StatelessWidget {
   final TextEditingController? controller;
   final bool? readOnly;
   final String? Function(String?)? validator;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
       controller: controller,
       validator: validator,
       readOnly: readOnly ?? false,
