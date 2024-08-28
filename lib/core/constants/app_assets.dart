@@ -26,6 +26,10 @@ class Assets {
   /// assets/icons/flowbite_4.svg
   static const String iconsFlowbite4 = "assets/icons/flowbite_4.svg";
 
+  /// Assets for iconsIcRoundLock
+  /// assets/icons/ic_round-lock.svg
+  static const String iconsIcRoundLock = "assets/icons/ic_round-lock.svg";
+
   /// Assets for iconsInvestmentBondsIconicon
   /// assets/icons/investment_bonds_iconicon.svg
   static const String iconsInvestmentBondsIconicon =
