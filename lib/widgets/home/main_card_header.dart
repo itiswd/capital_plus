@@ -5,7 +5,6 @@ import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:svg_flutter/svg.dart';
 
 class MainCardHeader extends StatelessWidget {

@@ -1,15 +1,15 @@
-// ignore_for_file: deprecated_member_use
-import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
-import 'package:capital_plus/core/utils/app_router.dart';
-import 'package:capital_plus/core/utils/my_bindings.dart';
-import 'package:capital_plus/screens/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:capital_plus/screens/home_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:capital_plus/core/utils/app_router.dart';
+import 'package:capital_plus/core/utils/my_bindings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
+// ignore_for_file: deprecated_member_use
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -44,7 +44,7 @@ class CapitalPulseApp extends StatelessWidget {
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',
-              scaffoldBackgroundColor: AppColor.lightGrey,
+              scaffoldBackgroundColor: AppColor.white,
             ),
           ),
         );
@@ -65,6 +65,8 @@ class Start extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: AppColor.lightGrey,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         elevation: 0,
         currentIndex: index,
         onTap: (int value) =>
@@ -72,9 +74,13 @@ class Start extends ConsumerWidget {
         items: List.generate(
           5,
           (i) => BottomNavigationBarItem(
-            activeIcon: CircleAvatar(
-              radius: 22.0.r,
-              backgroundColor: AppColor.blueAccent,
+            activeIcon: Container(
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: AppColor.blueAccent,
+                  borderRadius: BorderRadius.circular(
+                    22.0.r,
+                  )),
               child: SvgPicture.asset(
                 color: AppColor.white,
                 'assets/icons/flowbite_$i.svg',
