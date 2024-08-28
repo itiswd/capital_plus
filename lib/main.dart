@@ -65,6 +65,8 @@ class Start extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: AppColor.lightGrey,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         elevation: 0,
         currentIndex: index,
         onTap: (int value) =>
@@ -72,9 +74,13 @@ class Start extends ConsumerWidget {
         items: List.generate(
           5,
           (i) => BottomNavigationBarItem(
-            activeIcon: CircleAvatar(
-              radius: 22.0.r,
-              backgroundColor: AppColor.blueAccent,
+            activeIcon: Container(
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: AppColor.blueAccent,
+                  borderRadius: BorderRadius.circular(
+                    22.0.r,
+                  )),
               child: SvgPicture.asset(
                 color: AppColor.white,
                 'assets/icons/flowbite_$i.svg',
