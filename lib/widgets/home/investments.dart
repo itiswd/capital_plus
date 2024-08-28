@@ -36,7 +36,7 @@ class _InvestmentsState extends State<Investments> {
             },
             child: Container(
               height: visible == true ? 212.0.h : 82.0.h,
-              color: AppColor.lightGrey,
+              color: AppColor.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
