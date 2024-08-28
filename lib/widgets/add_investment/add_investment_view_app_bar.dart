@@ -5,24 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg.dart';
 
-class AddInvestmentBody extends StatelessWidget {
-  const AddInvestmentBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-        child: Column(
-          children: [
-            AddInvestmentViewAppBar(),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class AddInvestmentViewAppBar extends StatelessWidget {
   const AddInvestmentViewAppBar({super.key});
 
