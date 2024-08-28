@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           initialBinding: MyBindings(),
-          initialRoute: AppRouter.kHomeView,
+          initialRoute: AppRouter.kSplashView,
           getPages: AppRouter.routes,
           theme: ThemeData(
             fontFamily: 'Montserrat',
