@@ -9,7 +9,7 @@ class SplashBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        SvgPicture.asset(AppAssets.iconsLogoGroupSplash),
+        SvgPicture.asset(AppAssets.iconsLogoGroupSplash, width: 200, height: 200),
       ],
     );
   }

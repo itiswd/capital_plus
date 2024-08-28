@@ -1,12 +1,12 @@
 import 'dart:math';
-
+import 'package:svg_flutter/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/utils/app_styles.dart';
-import 'package:fl_chart/fl_chart.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:svg_flutter/svg.dart';
+
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -64,7 +64,7 @@ class HomeBody extends StatelessWidget {
                           SvgPicture.asset(
                             width: 12.w,
                             height: 12.h,
-                            Assets.iconsButtonOpen,
+                            AppAssets.iconsButtonOpen,
                           )
                         ],
                       ),
