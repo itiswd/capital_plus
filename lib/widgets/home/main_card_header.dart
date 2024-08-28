@@ -1,8 +1,11 @@
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:svg_flutter/svg.dart';
 
 class MainCardHeader extends StatelessWidget {
@@ -59,16 +62,21 @@ class MainCardHeader extends StatelessWidget {
           ],
         ),
         //Add button
-        Container(
-          width: 44.0,
-          height: 44.0,
-          decoration: BoxDecoration(
-            color: AppColor.lightGreenAccent,
-            borderRadius: BorderRadius.circular(80.0.r),
-          ),
-          child: const Icon(
-            Icons.add,
-            size: 28,
+        GestureDetector(
+          onTap: () {
+            Get.toNamed(AppRouter.kAddInvestmentView);
+          },
+          child: Container(
+            width: 44.0,
+            height: 44.0,
+            decoration: BoxDecoration(
+              color: AppColor.lightGreenAccent,
+              borderRadius: BorderRadius.circular(80.0.r),
+            ),
+            child: const Icon(
+              Icons.add,
+              size: 28,
+            ),
           ),
         )
       ],

@@ -1,15 +1,15 @@
-// ignore_for_file: deprecated_member_use
-import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
-import 'package:capital_plus/core/utils/app_router.dart';
-import 'package:capital_plus/core/utils/my_bindings.dart';
-import 'package:capital_plus/screens/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:capital_plus/screens/home_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:capital_plus/core/utils/app_router.dart';
+import 'package:capital_plus/core/utils/my_bindings.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
+// ignore_for_file: deprecated_member_use
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -17,11 +17,11 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   await SharedPref.init();
-  runApp(const MainApp());
+  runApp(const CapitalPulseApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class CapitalPulseApp extends StatelessWidget {
+  const CapitalPulseApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class MainApp extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             initialBinding: MyBindings(),
-            initialRoute: AppRouter.kStart,
+            initialRoute: AppRouter.kSplashView,
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',

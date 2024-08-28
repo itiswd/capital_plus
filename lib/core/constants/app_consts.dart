@@ -1,5 +1,5 @@
 import 'package:capital_plus/core/constants/app_assets.dart';
-
+const String kIsOnBoardingView = 'isOnBoardingView';
 Map<String, double> chartValues = {
   'Mo': 200,
   'Tu': 250,
