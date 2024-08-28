@@ -40,11 +40,15 @@ class CapitalPulseApp extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             initialBinding: MyBindings(),
-            initialRoute: AppRouter.kSplashView,
+            initialRoute: AppRouter.kStart,
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',
+<<<<<<< HEAD
               scaffoldBackgroundColor: AppColor.white
+=======
+              scaffoldBackgroundColor: AppColor.white,
+>>>>>>> 1d9b9363d9bbc25b29c6f6181f3cbe4265f959fb
             ),
           ),
         );
@@ -65,6 +69,8 @@ class Start extends ConsumerWidget {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: AppColor.lightGrey,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         elevation: 0,
         currentIndex: index,
         onTap: (int value) =>
@@ -72,9 +78,13 @@ class Start extends ConsumerWidget {
         items: List.generate(
           5,
           (i) => BottomNavigationBarItem(
-            activeIcon: CircleAvatar(
-              radius: 22.0.r,
-              backgroundColor: AppColor.blueAccent,
+            activeIcon: Container(
+              padding: const EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: AppColor.blueAccent,
+                  borderRadius: BorderRadius.circular(
+                    22.0.r,
+                  )),
               child: SvgPicture.asset(
                 color: AppColor.white,
                 'assets/icons/flowbite_$i.svg',
