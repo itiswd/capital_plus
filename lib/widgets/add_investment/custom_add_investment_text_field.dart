@@ -9,14 +9,20 @@ class CustomAddInvestmentTextField extends StatelessWidget {
     this.suffixIcon,
     required this.labelText,
     this.suffixIconConstraints,
+    this.controller,
+    this.readOnly,
   });
   final String labelText;
   final Widget? suffixIcon;
   final BoxConstraints? suffixIconConstraints;
+  final TextEditingController? controller;
+  final bool? readOnly;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      readOnly: readOnly ?? false,
       cursorColor: AppColor.grey,
       decoration: InputDecoration(
         label: Text(
