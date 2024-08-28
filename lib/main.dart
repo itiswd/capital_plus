@@ -1,11 +1,11 @@
-import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
-import 'package:capital_plus/core/utils/app_router.dart';
-import 'package:capital_plus/core/utils/my_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:capital_plus/core/utils/app_router.dart';
+import 'package:capital_plus/core/utils/my_bindings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           initialRoute: AppRouter.kHomeView,
           getPages: AppRouter.routes,
           theme: ThemeData(
-            fontFamily: '',
+            fontFamily: 'Montserrat',
             scaffoldBackgroundColor: AppColor.white,
           ),
         );
