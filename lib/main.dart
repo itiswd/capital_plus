@@ -44,7 +44,7 @@ class CapitalPulseApp extends StatelessWidget {
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',
-              scaffoldBackgroundColor: AppColor.lightGrey,
+              scaffoldBackgroundColor: AppColor.white
             ),
           ),
         );

@@ -1,11 +1,11 @@
-import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
-import 'package:capital_plus/core/utils/app_styles.dart';
-import 'package:capital_plus/widgets/home/investment_locked_row.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:svg_flutter/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
+import 'package:capital_plus/widgets/home/investment_locked_row.dart';
 
 class Investments extends StatelessWidget {
   const Investments({
