@@ -1,6 +1,6 @@
-import 'package:capital_plus/view/screens/home_view.dart';
-import 'package:capital_plus/view/screens/onboarding_view.dart';
-import 'package:capital_plus/view/screens/splash_view.dart';
+import 'package:capital_plus/screens/home_view.dart';
+import 'package:capital_plus/screens/onboarding_view.dart';
+import 'package:capital_plus/screens/splash_view.dart';
 import 'package:get/get.dart';
 
 abstract class AppRouter {
