@@ -17,11 +17,11 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   await SharedPref.init();
-  runApp(const MainApp());
+  runApp(const CapitalPulseApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class CapitalPulseApp extends StatelessWidget {
+  const CapitalPulseApp({super.key});
 
   @override
   Widget build(BuildContext context) {

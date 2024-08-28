@@ -74,4 +74,7 @@ class Assets {
   /// assets/icons/logo_onboarding_3.svg
   static const String iconsLogoOnboarding3 =
       "assets/icons/logo_onboarding_3.svg";
+  static const String arrowBack = "assets/icons/arrow-back.svg";
+  static const String arrowDown = "assets/icons/arrow-down.svg";
+  static const String lock = "assets/icons/lock.svg";
 }
