@@ -7,9 +7,13 @@ class SplashBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        SvgPicture.asset(AppAssets.iconsLogoGroupSplash, width: 200, height: 200),
+        SvgPicture.asset(
+          Assets.iconsLogoGroupSplash,
+          width: 200,
+          height: 200,
+        ),
       ],
     );
   }

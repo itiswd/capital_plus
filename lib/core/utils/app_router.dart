@@ -1,3 +1,4 @@
+import 'package:capital_plus/main.dart';
 import 'package:capital_plus/screens/home_view.dart';
 import 'package:capital_plus/screens/onboarding_view.dart';
 import 'package:capital_plus/screens/splash_view.dart';
@@ -7,6 +8,7 @@ abstract class AppRouter {
   static const String kSplashView = '/splashView';
   static const kOnBoardingView = '/onBoardingView';
   static const kHomeView = '/homeView';
+  static const kStart = '/start';
 
   static final routes = [
     GetPage(
@@ -20,6 +22,10 @@ abstract class AppRouter {
     GetPage(
       name: kHomeView,
       page: () => const HomeView(),
+    ),
+    GetPage(
+      name: kStart,
+      page: () => const Start(),
     ),
   ];
 }
