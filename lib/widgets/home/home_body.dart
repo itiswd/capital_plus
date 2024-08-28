@@ -64,7 +64,7 @@ class HomeBody extends StatelessWidget {
                           SvgPicture.asset(
                             width: 12.w,
                             height: 12.h,
-                            AppAssets.buttonOpen,
+                            Assets.iconsButtonOpen,
                           )
                         ],
                       ),
