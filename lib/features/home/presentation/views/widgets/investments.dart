@@ -18,7 +18,7 @@ class Investments extends StatefulWidget {
 }
 
 class _InvestmentsState extends State<Investments> {
-  List<bool> isOpen = List.filled(100, false);
+  List<bool>? isOpen;
   late Box<InvestmentModel> investmentBox;
   late List investData;
   @override
@@ -30,7 +30,7 @@ class _InvestmentsState extends State<Investments> {
 
   @override
   Widget build(BuildContext context) {
-    return investmentBox.values.toList().isEmpty
+    return investData.isEmpty
         ? Text(
             'You don\'t have any investments added yet.',
             textAlign: TextAlign.center,
@@ -43,14 +43,15 @@ class _InvestmentsState extends State<Investments> {
             children: List.generate(
               investData.length,
               (index) {
+                isOpen ??= List.generate(investData.length, (index) => false);
                 return GestureDetector(
                   onTap: () {
                     setState(() {
-                      isOpen[index] = !isOpen[index];
+                      isOpen![index] = !isOpen![index];
                     });
                   },
                   child: Container(
-                    height: isOpen[index] == true ? 212.0.h : 82.0.h,
+                    height: isOpen![index] == true ? 212.0.h : 82.0.h,
                     color: AppColor.white,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +118,7 @@ class _InvestmentsState extends State<Investments> {
                                     ),
                                   ),
                                   Visibility(
-                                    visible: isOpen[index],
+                                    visible: isOpen![index],
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -133,13 +134,17 @@ class _InvestmentsState extends State<Investments> {
                                         //Description
                                         SizedBox(
                                           height: 22.0.h,
-                                          child: Text(
-                                            investData[index]
-                                                    .description
-                                                    .isEmpty
-                                                ? 'Investment user text'
-                                                : investData[index].description,
-                                            style: AppStyles.body2Regular,
+                                          child: Expanded(
+                                            child: Text(
+                                              overflow: TextOverflow.ellipsis,
+                                              investData[index]
+                                                      .description
+                                                      .isEmpty
+                                                  ? 'Investment user text'
+                                                  : investData[index]
+                                                      .description,
+                                              style: AppStyles.body2Regular,
+                                            ),
                                           ),
                                         ),
                                         const InvestmentLockedRow(

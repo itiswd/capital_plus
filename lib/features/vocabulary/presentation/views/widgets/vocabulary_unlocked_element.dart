@@ -29,7 +29,6 @@ class VocabularyUnlockedElement extends StatelessWidget {
                 Text(
                   vocabulary['title']![index],
                   style: AppStyles.header2.copyWith(
-                    fontSize: 19.0.sp,
                     fontFamily: 'Outfit',
                     fontWeight: FontWeight.w700,
                   ),
@@ -53,7 +52,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
                       vocabulary['code']![index],
                       textAlign: TextAlign.right,
                       style: AppStyles.body2Regular.copyWith(
-                        fontFamily: 'Arial',
+                        fontFamily: '',
                       ),
                     ),
                   ),
