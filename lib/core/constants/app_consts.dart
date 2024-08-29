@@ -1,14 +1,9 @@
-import 'package:capital_plus/core/constants/app_assets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:capital_plus/core/constants/app_assets.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
-<<<<<<< HEAD
 const String kIsPrimium = 'isPrimium';
 const double kHorizontalPadding = 16.0;
-=======
-double kHorizontalPadding = 16.0.w;
->>>>>>> 2674c07e48d2b80b0f2452d3557a0647a6b6b399
 const String kInvestmentHiveBox = 'kInvestmentBox';
 DateFormat dateFormat = DateFormat('dd-MM-yyyy');
 String appFontMontserrat = 'Montserrat';
