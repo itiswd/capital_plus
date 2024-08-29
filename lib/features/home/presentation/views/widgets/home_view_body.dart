@@ -68,3 +68,22 @@ class _HomeBodyState extends State<HomeBody> {
     );
   }
 }
+
+// class Customwidget extends StatelessWidget {
+//   const Customwidget({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomScrollView(
+//       slivers: [
+//         SliverToBoxAdapter(),
+//         SliverToBoxAdapter(),
+//         SliverToBoxAdapter(),
+//         SliverList.builder(
+//           itemCount: 10,
+//           itemBuilder: (context, index) {},
+//         )
+//       ],
+//     );
+//   }
+// }
