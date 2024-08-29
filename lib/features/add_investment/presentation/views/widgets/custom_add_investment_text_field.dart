@@ -13,6 +13,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
     this.readOnly,
     this.validator,
     this.onTap,
+    this.maxLines,
   });
   final String labelText;
   final Widget? suffixIcon;
@@ -21,6 +22,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
   final bool? readOnly;
   final String? Function(String?)? validator;
   final void Function()? onTap;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
       controller: controller,
       validator: validator,
       readOnly: readOnly ?? false,
+      maxLines: maxLines ?? 1,
       cursorColor: AppColor.grey,
       decoration: InputDecoration(
         label: Text(

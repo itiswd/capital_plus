@@ -1,3 +1,4 @@
+import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,8 +12,9 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-  // Hive.registerAdapter(NoteModelAdapter());
+  Hive.registerAdapter(InvestmentModelAdapter());
   await ScreenUtil.ensureScreenSize();
+  await Hive.openBox<InvestmentModel>('kInvestmentBox');
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
