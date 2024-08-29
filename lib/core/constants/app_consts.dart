@@ -18,7 +18,7 @@ Map<String, double> chartValues = {
   'Su': 100,
 };
 
-final Map<String, String> investments = {
+final Map<String, String> investmentsIcons = {
   'Crypto Investment': Assets.iconsInvestmentCryptoIcon,
   'Cash Investment': Assets.iconsInvestmentCashIcon,
   'Stocks Investment': Assets.iconsInvestmentStocksIcon,
@@ -118,12 +118,12 @@ final Map<String, List<String>> vocabulary = {
   ],
 };
 
-List<String> premiumList = [
+final List<String> premiumList = [
   'A deeper definition of terms, examples from real practice.',
   'Access to original lessons from recognized financial market experts.',
   'Analytical reports to maintain desired asset ratio.',
 ];
-List<String> premiumActions = [
+final List<String> premiumActionTitles = [
   'Privacy Policy',
   'Restore',
   'Terms of Use',

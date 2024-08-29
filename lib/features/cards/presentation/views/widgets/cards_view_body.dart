@@ -2,6 +2,8 @@ import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/cards/data/models/card_model.dart';
+import 'package:capital_plus/features/cards/data/static/cards_data_static.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/cards_view_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,18 +33,21 @@ class CustomCardItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
-      itemCount: 2,
+      itemCount: cardsData.length,
       gridDelegate:
           const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (context, index) {
-        return const CustomCardItem();
+        return CustomCardItem(
+          card: cardsData[index],
+        );
       },
     );
   }
 }
 
 class CustomCardItem extends StatelessWidget {
-  const CustomCardItem({super.key});
+  const CustomCardItem({super.key, required this.card});
+  final CardModel card;
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +63,18 @@ class CustomCardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(Assets.iconsArrowBack),
+              SvgPicture.asset(card.logo),
               Column(
                 children: [
                   Text(
                     'Mkt Cap',
-                    style: AppStyles.body2Medium,
+                    style: AppStyles.body2Medium.copyWith(
+                      color: AppColor.darkBlue,
+                    ),
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    '1.834T',
+                    card.assetsNum,
                     style: AppStyles.body2Medium.copyWith(
                       color: AppColor.blueAccent,
                     ),
@@ -80,10 +87,12 @@ class CustomCardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Apple, Inc.',
-                style: AppStyles.header2.copyWith(
-                  fontFamily: appFontOutfit,
+              Expanded(
+                child: Text(
+                  card.name,
+                  style: AppStyles.header2.copyWith(
+                    fontFamily: appFontOutfit,
+                  ),
                 ),
               ),
               SvgPicture.asset(Assets.iconsArrowLeft)
