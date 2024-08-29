@@ -29,6 +29,7 @@ class _HomeBodyState extends State<HomeBody> {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,
           children: [
             SizedBox(height: 20.0.h),
@@ -67,3 +68,22 @@ class _HomeBodyState extends State<HomeBody> {
     );
   }
 }
+
+// class Customwidget extends StatelessWidget {
+//   const Customwidget({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomScrollView(
+//       slivers: [
+//         SliverToBoxAdapter(),
+//         SliverToBoxAdapter(),
+//         SliverToBoxAdapter(),
+//         SliverList.builder(
+//           itemCount: 10,
+//           itemBuilder: (context, index) {},
+//         )
+//       ],
+//     );
+//   }
+// }

@@ -5,6 +5,7 @@ const String kIsOnBoardingView = 'isOnBoardingView';
 const double kHorizontalPadding = 16.0;
 const String kInvestmentHiveBox = 'kInvestmentBox';
 DateFormat dateFormat = DateFormat('dd-MM-yyyy');
+String appFont = 'Montserrat';
 Map<String, double> chartValues = {
   'Mo': 200,
   'Tu': 250,

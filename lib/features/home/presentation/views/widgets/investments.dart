@@ -33,6 +33,7 @@ class _InvestmentsState extends State<Investments> {
     return investmentBox.values.toList().isEmpty
         ? Text(
             'You don\'t have any investments added yet.',
+            textAlign: TextAlign.center,
             style: AppStyles.body2Regular.copyWith(
               color: AppColor.darkGrey,
             ),

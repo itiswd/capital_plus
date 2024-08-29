@@ -7,6 +7,7 @@ import 'package:capital_plus/features/add_investment/presentation/views/widgets/
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_add_investment_text_field.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
@@ -87,8 +88,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                   labelText: 'Investment date',
                   controller: _investmentDateController,
                   readOnly: true,
-                  onTap: () =>
-                      _selectDate(context), // Call the date picker on tap
+                  onTap: () => _selectDate(context),
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -97,6 +97,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                   labelText: 'Amount',
                   controller: _amountController,
                   keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -108,6 +111,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Interest',
                   controller: _interestController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -116,6 +120,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Risk rating',
                   controller: _riskRatingController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -123,6 +128,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Expected return',
+                  readOnly: true,
                   controller: _expectedReturnController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,

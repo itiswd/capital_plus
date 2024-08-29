@@ -1,6 +1,7 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAddInvestmentTextField extends StatelessWidget {
@@ -15,6 +16,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
     this.onTap,
     this.maxLines,
     this.keyboardType,
+    this.inputFormatters,
   });
   final String labelText;
   final Widget? suffixIcon;
@@ -25,6 +27,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
   final void Function()? onTap;
   final int? maxLines;
   final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
       maxLines: maxLines ?? 1,
       keyboardType: keyboardType,
       cursorColor: AppColor.grey,
+      inputFormatters: inputFormatters,
       decoration: InputDecoration(
         label: Text(
           labelText,
