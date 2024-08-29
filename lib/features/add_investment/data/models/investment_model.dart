@@ -20,13 +20,14 @@ class InvestmentModel {
   @HiveField(7)
   final String? expectedReturn;
 
-  InvestmentModel(
-      {required this.investmentCategory,
-      required this.investmentName,
-      required this.investmentDate,
-      required this.investmentAmount,
-      required this.description,
-      required this.interest,
-      required this.riskRating,
-      required this.expectedReturn});
+  InvestmentModel({
+    required this.investmentCategory,
+    required this.investmentName,
+    required this.investmentDate,
+    required this.investmentAmount,
+    required this.description,
+    required this.interest,
+    required this.riskRating,
+    required this.expectedReturn,
+  });
 }

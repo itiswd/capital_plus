@@ -40,7 +40,7 @@ class CapitalPulseApp extends StatelessWidget {
           child: GetMaterialApp(
             debugShowCheckedModeBanner: false,
             initialBinding: MyBindings(),
-            initialRoute: AppRouter.kBottomNavBarController,
+            initialRoute: AppRouter.kSplashView,
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',
