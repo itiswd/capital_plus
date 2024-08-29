@@ -1,6 +1,6 @@
-import 'package:capital_plus/features/home/home_view.dart';
-import 'package:capital_plus/features/settings/settings_view.dart';
-import 'package:capital_plus/features/vocabulary/vocabulary_view.dart';
+import 'package:capital_plus/features/home/presentation/views/home_view.dart';
+import 'package:capital_plus/features/settings/presentation/views/settings_view.dart';
+import 'package:capital_plus/features/vocabulary/presentation/views/vocabulary_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';

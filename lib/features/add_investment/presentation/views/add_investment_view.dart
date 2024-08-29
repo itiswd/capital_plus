@@ -1,4 +1,4 @@
-import 'package:capital_plus/widgets/add_investment/add_investment_body.dart';
+import 'package:capital_plus/features/add_investment/presentation/views/widgets/add_investment_body.dart';
 import 'package:flutter/material.dart';
 
 class AddInvestmentView extends StatelessWidget {
@@ -11,4 +11,3 @@ class AddInvestmentView extends StatelessWidget {
     );
   }
 }
-//klkfkn

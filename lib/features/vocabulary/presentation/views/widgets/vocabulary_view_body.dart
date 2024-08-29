@@ -1,6 +1,6 @@
 import 'package:capital_plus/core/utils/app_styles.dart';
-import 'package:capital_plus/features/vocabulary/widgets/vocabulary_unlocked_element.dart';
-import 'package:capital_plus/features/vocabulary/widgets/vocabulary_locked_element.dart';
+import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_unlocked_element.dart';
+import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_locked_element.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

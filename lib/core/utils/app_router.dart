@@ -1,8 +1,8 @@
-import 'package:capital_plus/features/add_investment/add_investment_view.dart';
-import 'package:capital_plus/features/home/home_view.dart';
-import 'package:capital_plus/features/onboarding/onboarding_view.dart';
-import 'package:capital_plus/features/premium/premium_view.dart';
-import 'package:capital_plus/features/splash/splash_view.dart';
+import 'package:capital_plus/features/add_investment/presentation/views/add_investment_view.dart';
+import 'package:capital_plus/features/home/presentation/views/home_view.dart';
+import 'package:capital_plus/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:capital_plus/features/premium/presentation/views/premium_view.dart';
+import 'package:capital_plus/features/splash/presentation/views/splash_view.dart';
 import 'package:capital_plus/main.dart';
 import 'package:get/get.dart';
 

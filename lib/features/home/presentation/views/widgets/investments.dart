@@ -5,7 +5,7 @@ import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
-import 'package:capital_plus/features/home/widgets/investment_locked_row.dart';
+import 'package:capital_plus/features/home/presentation/views/widgets/investment_locked_row.dart';
 
 class Investments extends StatefulWidget {
   const Investments({

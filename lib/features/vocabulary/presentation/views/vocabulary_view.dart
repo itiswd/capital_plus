@@ -1,4 +1,4 @@
-import 'package:capital_plus/features/vocabulary/widgets/vocabulary_view_body.dart';
+import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_view_body.dart';
 import 'package:flutter/material.dart';
 
 class VocabularyView extends StatelessWidget {

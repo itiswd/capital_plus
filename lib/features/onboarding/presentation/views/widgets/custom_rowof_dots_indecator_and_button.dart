@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../../core/utils/app_styles.dart';
+import '../../../../../core/utils/app_styles.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:capital_plus/features/onboarding/widgets/model.dart';
+import 'package:capital_plus/features/onboarding/presentation/views/widgets/model.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 
 class CustomRowofDotsIndecatorAndButton extends StatefulWidget {

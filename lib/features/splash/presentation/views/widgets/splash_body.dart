@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../../../core/utils/app_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../core/constants/app_consts.dart';
+import '../../../../../core/constants/app_consts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
-import '../../../core/service/shared_preferences_singleton.dart';
+import '../../../../../core/service/shared_preferences_singleton.dart';
 
 class SplashBody extends StatefulWidget {
   const SplashBody({super.key});

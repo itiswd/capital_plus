@@ -1,4 +1,4 @@
-import 'package:capital_plus/features/splash/widgets/splash_body.dart';
+import 'package:capital_plus/features/splash/presentation/views/widgets/splash_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {

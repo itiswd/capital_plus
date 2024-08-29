@@ -1,4 +1,4 @@
-import 'package:capital_plus/features/home/widgets/home_view_body.dart';
+import 'package:capital_plus/features/home/presentation/views/widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {

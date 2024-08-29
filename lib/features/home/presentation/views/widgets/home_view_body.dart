@@ -1,6 +1,6 @@
-import 'package:capital_plus/features/home/widgets/investments.dart';
-import 'package:capital_plus/features/home/widgets/main_card_chart.dart';
-import 'package:capital_plus/features/home/widgets/main_card_header.dart';
+import 'package:capital_plus/features/home/presentation/views/widgets/investments.dart';
+import 'package:capital_plus/features/home/presentation/views/widgets/main_card_chart.dart';
+import 'package:capital_plus/features/home/presentation/views/widgets/main_card_header.dart';
 import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

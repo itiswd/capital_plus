@@ -1,4 +1,4 @@
-import 'package:capital_plus/features/premium/widgets/premium_view_body.dart';
+import 'package:capital_plus/features/premium/presentation/views/widgets/premium_view_body.dart';
 import 'package:flutter/material.dart';
 
 class PremiumView extends StatelessWidget {
