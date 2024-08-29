@@ -12,6 +12,16 @@ import 'package:capital_plus/features/add_investment/data/models/investment_mode
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/add_investment_view_app_bar.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_add_investment_text_field.dart';
+<<<<<<< HEAD
+=======
+import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:svg_flutter/svg.dart';
+>>>>>>> 2674c07e48d2b80b0f2452d3557a0647a6b6b399
 
 class AddInvestmentBody extends StatefulWidget {
   const AddInvestmentBody({super.key});
@@ -19,6 +29,8 @@ class AddInvestmentBody extends StatefulWidget {
   @override
   State<AddInvestmentBody> createState() => _AddInvestmentBodyState();
 }
+
+var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
 
 class _AddInvestmentBodyState extends State<AddInvestmentBody> {
   final TextEditingController _investmentCategoryController =
@@ -86,8 +98,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                   labelText: 'Investment date',
                   controller: _investmentDateController,
                   readOnly: true,
-                  onTap: () =>
-                      _selectDate(context), // Call the date picker on tap
+                  onTap: () => _selectDate(context),
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -96,6 +107,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                   labelText: 'Amount',
                   controller: _amountController,
                   keyboardType: TextInputType.number,
+                  inputFormatters: <TextInputFormatter>[
+                    FilteringTextInputFormatter.digitsOnly,
+                  ],
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -107,6 +121,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Interest',
                   controller: _interestController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -115,6 +130,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Risk rating',
                   controller: _riskRatingController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -122,6 +138,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Expected return',
+                  readOnly: true,
                   controller: _expectedReturnController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
@@ -131,10 +148,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 SizedBox(height: 36.h),
                 CustomButton(
                   onTap: () {
+                    setState(() {});
                     if (formState.currentState!.validate()) {
                       try {
-                        var investmentBox =
-                            Hive.box<InvestmentModel>(kInvestmentHiveBox);
                         investmentBox.add(
                           InvestmentModel(
                             investmentCategory:
@@ -193,7 +209,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
     );
 
     if (selectedDate != null) {
-      String formattedDate = DateFormat('dd-MM-yyyy').format(selectedDate);
+      String formattedDate = dateFormat.format(selectedDate);
       setState(() {
         _investmentDateController.text = formattedDate;
       });

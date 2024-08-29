@@ -1,3 +1,4 @@
+import 'package:capital_plus/features/cards/presentation/views/cards_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,18 +53,8 @@ class BottomNavBarController extends ConsumerWidget {
         index: index,
         children: const [
           HomeView(),
-          Scaffold(
-            body: Center(
-              child: Text(
-                '2',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-          ),
-     LessonsView(),
+          CardsView(),
+          LessonsView(),
           VocabularyView(),
           SettingsView(),
         ],

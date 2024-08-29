@@ -45,7 +45,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
       );
     } else {
       SharedPref.setBool(kIsOnBoardingView, true);
-      Get.toNamed(AppRouter.kHomeView);
+      Get.toNamed(AppRouter.kBottomNavBarController);
     }
   }
 
@@ -53,7 +53,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -61,14 +61,17 @@ class _OnboardingBodyState extends State<OnboardingBody> {
             TextButton(
               onPressed: () {
                 SharedPref.setBool(kIsOnBoardingView, true);
-                Get.toNamed(AppRouter.kHomeView);
+                Get.toNamed(
+                  AppRouter.kBottomNavBarController,
+                );
               },
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Skip',
-                  style:
-                      AppStyles.body2Medium.copyWith(color: AppColor.darkGrey),
+                  style: AppStyles.body2Medium.copyWith(
+                    color: AppColor.darkGrey,
+                  ),
                 ),
               ),
             ),
@@ -78,9 +81,10 @@ class _OnboardingBodyState extends State<OnboardingBody> {
               customItemList: customItemList,
             ),
             CustomRowofDotsIndecatorAndButton(
-                currentPage: _currentPage.toInt(),
-                customItemList: customItemList,
-                onPressed: _onNextPressed),
+              currentPage: _currentPage.toInt(),
+              customItemList: customItemList,
+              onPressed: _onNextPressed,
+            ),
             SizedBox(height: 20.0.h),
           ],
         ),

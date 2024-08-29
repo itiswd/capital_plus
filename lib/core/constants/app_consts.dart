@@ -1,9 +1,18 @@
 import 'package:capital_plus/core/constants/app_assets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
+<<<<<<< HEAD
 const String kIsPrimium = 'isPrimium';
 const double kHorizontalPadding = 16.0;
+=======
+double kHorizontalPadding = 16.0.w;
+>>>>>>> 2674c07e48d2b80b0f2452d3557a0647a6b6b399
 const String kInvestmentHiveBox = 'kInvestmentBox';
+DateFormat dateFormat = DateFormat('dd-MM-yyyy');
+String appFontMontserrat = 'Montserrat';
+String appFontOutfit = 'Outfit';
 Map<String, double> chartValues = {
   'Mo': 200,
   'Tu': 250,
@@ -14,35 +23,12 @@ Map<String, double> chartValues = {
   'Su': 100,
 };
 
-final Map<String, dynamic> investments = {
-  'name': [
-    'Crypto Investment',
-    'Cash Investment',
-    'Stocks Investment',
-    'Bonds Investment',
-    'Other Investment',
-  ],
-  'userName': [
-    'User name investment',
-    'User name investment',
-    'User name investment',
-    'User name investment',
-    'User name investment',
-  ],
-  'amount': [
-    120,
-    200,
-    300,
-    400,
-    120,
-  ],
-  'thumbnail': [
-    Assets.iconsInvestmentCryptoIcon,
-    Assets.iconsInvestmentCashIcon,
-    Assets.iconsInvestmentStocksIcon,
-    Assets.iconsInvestmentBondsIconicon,
-    Assets.iconsInvestmentOtherIcon,
-  ],
+final Map<String, String> investments = {
+  'Crypto Investment': Assets.iconsInvestmentCryptoIcon,
+  'Cash Investment': Assets.iconsInvestmentCashIcon,
+  'Stocks Investment': Assets.iconsInvestmentStocksIcon,
+  'Bonds Investment': Assets.iconsInvestmentBondsIconicon,
+  'Other Investment': Assets.iconsInvestmentOtherIcon,
 };
 
 final List<String> investmentCategories = [
