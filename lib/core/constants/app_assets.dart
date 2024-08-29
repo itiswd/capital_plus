@@ -1,18 +1,6 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
-  /// Assets for iconsAlibaba
-  /// assets/icons/alibaba.svg
-  static const String iconsAlibaba = "assets/icons/alibaba.svg";
-
-  /// Assets for iconsAmazon
-  /// assets/icons/amazon.svg
-  static const String iconsAmazon = "assets/icons/amazon.svg";
-
-  /// Assets for iconsApple
-  /// assets/icons/apple.svg
-  static const String iconsApple = "assets/icons/apple.svg";
 
   /// Assets for iconsArrowBack
   /// assets/icons/arrow-back.svg
@@ -29,10 +17,6 @@ class Assets {
   /// Assets for iconsArrowLeft
   /// assets/icons/arrow_left.svg
   static const String iconsArrowLeft = "assets/icons/arrow_left.svg";
-
-  /// Assets for iconsBerkshireHathaway
-  /// assets/icons/berkshire-hathaway.svg
-  static const String iconsBerkshireHathaway = "assets/icons/berkshire-hathaway.svg";
 
   /// Assets for iconsButtonOpen
   /// assets/icons/button_open.svg
@@ -60,43 +44,38 @@ class Assets {
 
   /// Assets for iconsFluentIosArrow24Filled
   /// assets/icons/fluent_ios_arrow_24_filled.svg
-  static const String iconsFluentIosArrow24Filled = "assets/icons/fluent_ios_arrow_24_filled.svg";
-
-  /// Assets for iconsGoogle
-  /// assets/icons/google.svg
-  static const String iconsGoogle = "assets/icons/google.svg";
+  static const String iconsFluentIosArrow24Filled =
+      "assets/icons/fluent_ios_arrow_24_filled.svg";
 
   /// Assets for iconsIcRoundNoteAlt
   /// assets/icons/ic_round-note-alt.svg
-  static const String iconsIcRoundNoteAlt = "assets/icons/ic_round-note-alt.svg";
+  static const String iconsIcRoundNoteAlt =
+      "assets/icons/ic_round-note-alt.svg";
 
   /// Assets for iconsInvestmentBondsIconicon
   /// assets/icons/investment_bonds_iconicon.svg
-  static const String iconsInvestmentBondsIconicon = "assets/icons/investment_bonds_iconicon.svg";
+  static const String iconsInvestmentBondsIconicon =
+      "assets/icons/investment_bonds_iconicon.svg";
 
   /// Assets for iconsInvestmentCashIcon
   /// assets/icons/investment_cash_icon.svg
-  static const String iconsInvestmentCashIcon = "assets/icons/investment_cash_icon.svg";
+  static const String iconsInvestmentCashIcon =
+      "assets/icons/investment_cash_icon.svg";
 
   /// Assets for iconsInvestmentCryptoIcon
   /// assets/icons/investment_crypto_icon.svg
-  static const String iconsInvestmentCryptoIcon = "assets/icons/investment_crypto_icon.svg";
+  static const String iconsInvestmentCryptoIcon =
+      "assets/icons/investment_crypto_icon.svg";
 
   /// Assets for iconsInvestmentOtherIcon
   /// assets/icons/investment_other_icon.svg
-  static const String iconsInvestmentOtherIcon = "assets/icons/investment_other_icon.svg";
+  static const String iconsInvestmentOtherIcon =
+      "assets/icons/investment_other_icon.svg";
 
   /// Assets for iconsInvestmentStocksIcon
   /// assets/icons/investment_stocks_icon.svg
-  static const String iconsInvestmentStocksIcon = "assets/icons/investment_stocks_icon.svg";
-
-  /// Assets for iconsJohnsonJohnson
-  /// assets/icons/johnson-johnson.svg
-  static const String iconsJohnsonJohnson = "assets/icons/johnson-johnson.svg";
-
-  /// Assets for iconsJpMorgan
-  /// assets/icons/jp-morgan.svg
-  static const String iconsJpMorgan = "assets/icons/jp-morgan.svg";
+  static const String iconsInvestmentStocksIcon =
+      "assets/icons/investment_stocks_icon.svg";
 
   /// Assets for iconsLock
   /// assets/icons/lock.svg
@@ -108,27 +87,23 @@ class Assets {
 
   /// Assets for iconsLogoGroupSplash
   /// assets/icons/logo_group_splash.svg
-  static const String iconsLogoGroupSplash = "assets/icons/logo_group_splash.svg";
+  static const String iconsLogoGroupSplash =
+      "assets/icons/logo_group_splash.svg";
 
   /// Assets for iconsLogoOnboarding1
   /// assets/icons/logo_onboarding_1.svg
-  static const String iconsLogoOnboarding1 = "assets/icons/logo_onboarding_1.svg";
+  static const String iconsLogoOnboarding1 =
+      "assets/icons/logo_onboarding_1.svg";
 
   /// Assets for iconsLogoOnboarding2
   /// assets/icons/logo_onboarding_2.svg
-  static const String iconsLogoOnboarding2 = "assets/icons/logo_onboarding_2.svg";
+  static const String iconsLogoOnboarding2 =
+      "assets/icons/logo_onboarding_2.svg";
 
   /// Assets for iconsLogoOnboarding3
   /// assets/icons/logo_onboarding_3.svg
-  static const String iconsLogoOnboarding3 = "assets/icons/logo_onboarding_3.svg";
-
-  /// Assets for iconsMeta
-  /// assets/icons/meta.svg
-  static const String iconsMeta = "assets/icons/meta.svg";
-
-  /// Assets for iconsMicrosoft
-  /// assets/icons/microsoft.svg
-  static const String iconsMicrosoft = "assets/icons/microsoft.svg";
+  static const String iconsLogoOnboarding3 =
+      "assets/icons/logo_onboarding_3.svg";
 
   /// Assets for iconsOpenLock
   /// assets/icons/open_lock.svg
@@ -138,20 +113,21 @@ class Assets {
   /// assets/icons/search.svg
   static const String iconsSearch = "assets/icons/search.svg";
 
-  /// Assets for iconsTesla
-  /// assets/icons/tesla.svg
-  static const String iconsTesla = "assets/icons/tesla.svg";
-
-  /// Assets for iconsTheProcterGambleCompany
-  /// assets/icons/the-procter-gamble-company.svg
-  static const String iconsTheProcterGambleCompany = "assets/icons/the-procter-gamble-company.svg";
-
   /// Assets for iconsVector
   /// assets/icons/Vector.svg
   static const String iconsVector = "assets/icons/Vector.svg";
 
-  /// Assets for iconsVisa
-  /// assets/icons/visa.svg
-  static const String iconsVisa = "assets/icons/visa.svg";
+  static String apple = 'assets/icons/apple.png';
+  static String amazon = 'assets/icons/amazon.png';
+  static String google = 'assets/icons/google.png';
+  static String microsoft = 'assets/icons/microsoft.png';
+  static String tesla = 'assets/icons/tesla.png';
+  static String meta = 'assets/icons/meta.png';
+  static String alibaba = 'assets/icons/alibaba.png';
+  static String visa = 'assets/icons/visa.png';
+  static String berkshireHathaway = 'assets/icons/berkshire-hathaway.png';
+  static String jPMorganChaseCo = 'assets/icons/jp-morgan-chase-co.png';
+  static String johnsonJohnson = 'assets/icons/johnson-johnson.png';
+  static String theProcterGambleCompany =
+      'assets/icons/the-procter-gamble-company.png';
 }
-

@@ -14,7 +14,7 @@ class CardsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -63,9 +63,8 @@ class CustomCardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(
-                'assets/icons/visa.svg',
-                color: AppColor.black,
+              Image.asset(
+                card.logo,
                 fit: BoxFit.fill,
               ),
               Column(
