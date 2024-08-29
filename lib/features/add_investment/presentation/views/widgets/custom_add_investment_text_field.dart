@@ -14,6 +14,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
     this.validator,
     this.onTap,
     this.maxLines,
+    this.keyboardType,
   });
   final String labelText;
   final Widget? suffixIcon;
@@ -23,6 +24,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final void Function()? onTap;
   final int? maxLines;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class CustomAddInvestmentTextField extends StatelessWidget {
       validator: validator,
       readOnly: readOnly ?? false,
       maxLines: maxLines ?? 1,
+      keyboardType: keyboardType,
       cursorColor: AppColor.grey,
       decoration: InputDecoration(
         label: Text(

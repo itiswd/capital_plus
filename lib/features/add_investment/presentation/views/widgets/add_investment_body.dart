@@ -40,6 +40,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
   @override
   void dispose() {
     _investmentNameController.dispose();
+    _investmentDateController.dispose();
     super.dispose();
   }
 
@@ -85,6 +86,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Investment date',
                   controller: _investmentDateController,
+                  readOnly: true,
+                  onTap: () =>
+                      _selectDate(context), // Call the date picker on tap
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -92,6 +96,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Amount',
                   controller: _amountController,
+                  keyboardType: TextInputType.number,
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -146,7 +151,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                         debugPrint('success');
                         Get.back();
                       } catch (e) {
-                        debugPrint(e.toString());
+                        // Handle the error
                       }
                     }
                   },
@@ -172,13 +177,26 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
           .toList(),
     ).then((value) {
       if (value != null) {
-        // Ensure the text is updated safely
         setState(() {
           _investmentCategoryController.text = value;
         });
       }
     });
   }
+
+  Future<void> _selectDate(BuildContext context) async {
+    DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+    );
+
+    if (selectedDate != null) {
+      String formattedDate = dateFormat.format(selectedDate);
+      setState(() {
+        _investmentDateController.text = formattedDate;
+      });
+    }
+  }
 }
-  //  var investmentBox = Hive.box< InvestmentModel>(kInvestmentHiveBox );
-  //                       investmentBox  = noteBox.values.toList();

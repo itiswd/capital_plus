@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/app_router.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/constants/app_consts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +58,7 @@ class _SplashBodyState extends State<SplashBody> {
     bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingView) {
-        Get.offNamed(AppRouter.kHomeView);
+        Get.offNamed(AppRouter.kBottomNavBarController);
       } else {
         Get.offNamed(AppRouter.kOnBoardingView);
       }
