@@ -1,11 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
-
 class LessonElementState extends StateNotifier<bool> {
   LessonElementState() : super(false);
 
-  // Example list of lessons. This can be initialized in the constructor if needed.
   final List<String> lessonsList = [
     "Portfolio Diversification",
     "Financial Literacy",
@@ -19,19 +16,17 @@ class LessonElementState extends StateNotifier<bool> {
     "Behavioral Economics\nand Investment"
   ];
 
+  /// Toggle the value of [state] between true and false.
   void toggleChecked() {
     state = !state;
   }
 
   String getLesson(int index) {
-    // Return the lesson text based on the index
-    if (index >= 0 && index < lessonsList.length) {
-      return lessonsList[index];
-    }
-    return "Lesson Not Found";
+    return lessonsList[index];
   }
 }
 
-final lessonElementProvider = StateNotifierProvider.family<LessonElementState, bool, int>((ref, index) {
+final lessonElementProvider =
+    StateNotifierProvider.family<LessonElementState, bool, int>((ref, index) {
   return LessonElementState();
 });
