@@ -128,7 +128,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                     if (formState.currentState!.validate()) {
                       try {
                         var investmentBox =
-                            Hive.box<InvestmentModel>('kInvestmentBox');
+                            Hive.box<InvestmentModel>(kInvestmentHiveBox);
                         investmentBox.add(
                           InvestmentModel(
                             investmentCategory:
@@ -180,3 +180,5 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
     });
   }
 }
+  //  var investmentBox = Hive.box< InvestmentModel>(kInvestmentHiveBox );
+  //                       investmentBox  = noteBox.values.toList();
