@@ -143,9 +143,11 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                             expectedReturn: _expectedReturnController.text,
                           ),
                         );
-                        print('success');
+                        debugPrint('success');
                         Get.back();
-                      } catch (e) {}
+                      } catch (e) {
+                        debugPrint(e.toString());
+                      }
                     }
                   },
                 ),
