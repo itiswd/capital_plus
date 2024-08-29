@@ -3,6 +3,7 @@ import 'package:capital_plus/core/constants/app_assets.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
 const String kIsPrimium = 'isPrimium';
+const String klistofCheckBox = 'listofCheckBox';
 const double kHorizontalPadding = 16.0;
 const String kInvestmentHiveBox = 'kInvestmentBox';
 DateFormat dateFormat = DateFormat('dd-MM-yyyy');

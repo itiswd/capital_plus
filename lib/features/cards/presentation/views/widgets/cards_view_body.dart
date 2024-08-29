@@ -1,13 +1,13 @@
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
-import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/features/cards/data/models/card_model.dart';
 import 'package:capital_plus/features/cards/data/static/cards_data_static.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/cards_view_app_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CardsViewBody extends StatelessWidget {
   const CardsViewBody({super.key});
@@ -64,7 +64,7 @@ class CustomCardItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SvgPicture.asset(
-                'assets/icons/visa.svg',
+                Assets.iconsVisa,
                 color: AppColor.black,
                 fit: BoxFit.fill,
               ),

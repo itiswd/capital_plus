@@ -1,9 +1,10 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../manager/lesson_element_state.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 
 class LessonElement extends ConsumerWidget {
@@ -12,8 +13,8 @@ class LessonElement extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isChecked = ref.watch(lessonElementProvider(index));
-    final lessonElementState = ref.read(lessonElementProvider(index).notifier);
+    final lessonElementState = ref.watch(lessonElementProvider(index).notifier);
+    ref.watch(lessonElementProvider(index));
 
     return GestureDetector(
       onTap: () {
@@ -48,13 +49,15 @@ class LessonElement extends ConsumerWidget {
               children: [
                 Text(
                   "Lesson ${index + 1}",
-                  style: AppStyles.header2
-                      .copyWith(color: lessonElementState.getTextColor(index)),
+                  style: AppStyles.header2.copyWith(
+                    color: lessonElementState.getTextColor(index),
+                  ),
                 ),
                 Text(
                   lessonElementState.getLesson(index),
-                  style: AppStyles.body1Regular
-                      .copyWith(color: lessonElementState.getTextColor(index)),
+                  style: AppStyles.body1Regular.copyWith(
+                    color: lessonElementState.getTextColor(index),
+                  ),
                 ),
               ],
             ),
@@ -67,22 +70,23 @@ class LessonElement extends ConsumerWidget {
                       color: AppColor.grey,
                     ),
                   )
-                : Transform.scale(
-                    scale: 1.2,
-                    child: Checkbox(
-                      value: isChecked,
-                      onChanged: (bool? newValue) {
-                        if (newValue != null) {
-                          lessonElementState.toggleChecked();
-                        }
-                      },
-                      activeColor: AppColor.blue,
-                      checkColor: Colors.white,
-                      shape: const CircleBorder(),
-                      side: MaterialStateBorderSide.resolveWith(
-                        (states) =>
-                            const BorderSide(width: .95, color: AppColor.blue),
-                      ),
+                : GestureDetector(
+                    onTap: () {
+                      lessonElementState.toggleChecked(index);
+                    },
+                    child: Container(
+                      child: lessonElementState.getCheckedList()[index]
+                          ? SvgPicture.asset(Assets.iconsCheckBox)
+                          : Container(
+                              width: 24.w,
+                              height: 24.w,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: AppColor.blue,
+                                  width: 1.0,
+                                ),
+                              )),
                     ),
                   ),
           ],
@@ -91,3 +95,7 @@ class LessonElement extends ConsumerWidget {
     );
   }
 }
+
+
+
+
