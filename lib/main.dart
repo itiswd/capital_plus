@@ -7,9 +7,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
+import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  // await Hive.initFlutter();
+  await Hive.initFlutter();
+  // Hive.registerAdapter(NoteModelAdapter());
   await ScreenUtil.ensureScreenSize();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
