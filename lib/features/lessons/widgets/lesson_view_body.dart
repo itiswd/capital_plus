@@ -11,7 +11,9 @@ class LessonsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: ListView(
-      padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      padding: const EdgeInsets.symmetric(
+        horizontal: kHorizontalPadding,
+      ),
       children: [
         SizedBox(height: 20.0.h),
         Text('Lessons', textAlign: TextAlign.center, style: AppStyles.header1),
