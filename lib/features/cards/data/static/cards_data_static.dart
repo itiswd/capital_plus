@@ -3,58 +3,60 @@ import 'package:capital_plus/features/cards/data/models/card_model.dart';
 
 List<CardModel> cardsData = [
   CardModel(
-    logo: Assets.iconsApple,
+    logo: Assets.apple,
     assetsNum: '3.45T',
     name: 'Apple, Inc.',
   ),
   CardModel(
-    logo: Assets.iconsAmazon,
+    logo: Assets.amazon,
     assetsNum: '1.834T',
     name: 'Amazon.com, Inc.',
   ),
   CardModel(
-    logo: Assets.iconsGoogle,
+    logo: Assets.google,
     assetsNum: '2.047T',
     name: 'Google, Inc.',
   ),
   CardModel(
-      logo: Assets.iconsMicrosoft,
-      assetsNum: '3.078T',
-      name: 'Microsoft, Inc.'),
+    logo: Assets.microsoft,
+    assetsNum: '3.078T',
+    name: 'Microsoft, Inc.',
+  ),
   CardModel(
-    logo: Assets.iconsTesla,
+    logo: Assets.tesla,
     assetsNum: '679.931B',
     name: 'Tesla, Inc.',
   ),
   CardModel(
-    logo: Assets.iconsMeta,
+    logo: Assets.meta,
     assetsNum: '1.315T',
     name: 'Meta Platforns',
   ),
   CardModel(
-    logo: Assets.iconsAlibaba,
+    logo: Assets.alibaba,
     assetsNum: '190.86B',
     name: 'Alibaba',
   ),
   CardModel(
-    logo: Assets.iconsVisa,
+    logo: Assets.visa,
     assetsNum: '523.3B',
     name: 'Visa, Inc.',
   ),
   CardModel(
-      logo: Assets.iconsBerkshireHathaway,
-      assetsNum: '981.4B',
-      name: 'Berkshire Hathaway'),
+    logo: Assets.apple,
+    assetsNum: '981.4B',
+    name: 'Berkshire Hathaway',
+  ),
   CardModel(
-      logo: Assets.iconsJpMorgan,
+      logo: Assets.jPMorganChaseCo,
       assetsNum: '621.82B',
       name: 'JPMorgan Chase & Co.'),
   CardModel(
-      logo: Assets.iconsJohnsonJohnson,
+      logo: Assets.johnsonJohnson,
       assetsNum: '396.39B',
       name: 'Johnson & Johnson'),
   CardModel(
-      logo: Assets.iconsTheProcterGambleCompany,
+      logo: Assets.theProcterGambleCompany,
       assetsNum: '400.66B',
       name: 'The Procter & Gamble Company'),
 ];

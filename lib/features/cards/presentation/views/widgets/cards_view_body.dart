@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
@@ -8,6 +9,11 @@ import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/features/cards/data/models/card_model.dart';
 import 'package:capital_plus/features/cards/data/static/cards_data_static.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/cards_view_app_bar.dart';
+=======
+import 'package:capital_plus/features/cards/presentation/views/widgets/cards_view_app_bar.dart';
+import 'package:capital_plus/features/cards/presentation/views/widgets/custom_card_items_list.dart';
+import 'package:flutter/material.dart';
+>>>>>>> 85018848512f8bbed9ab9114a0e66a0d28fac42c
 
 class CardsViewBody extends StatelessWidget {
   const CardsViewBody({super.key});
@@ -26,6 +32,7 @@ class CardsViewBody extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
 class CustomCardItemsList extends StatelessWidget {
   const CustomCardItemsList({super.key});
@@ -107,3 +114,5 @@ class CustomCardItem extends StatelessWidget {
     );
   }
 }
+=======
+>>>>>>> 85018848512f8bbed9ab9114a0e66a0d28fac42c
