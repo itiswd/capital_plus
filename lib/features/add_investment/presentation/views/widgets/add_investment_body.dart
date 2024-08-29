@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:intl/intl.dart'; // Import this for date formatting
 import 'package:svg_flutter/svg.dart';
 
 class AddInvestmentBody extends StatefulWidget {
@@ -38,6 +39,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
   @override
   void dispose() {
     _investmentNameController.dispose();
+    _investmentDateController.dispose();
     super.dispose();
   }
 
@@ -83,6 +85,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Investment date',
                   controller: _investmentDateController,
+                  readOnly: true,
+                  onTap: () =>
+                      _selectDate(context), // Call the date picker on tap
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -90,6 +95,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Amount',
                   controller: _amountController,
+                  keyboardType: TextInputType.number,
                   validator: (val) {
                     return valiTextField(val!);
                   },
@@ -135,8 +141,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                                 _investmentCategoryController.text,
                             investmentName: _investmentNameController.text,
                             investmentDate: _investmentDateController.text,
-                            investmentAmount:
-                                _investmentCategoryController.text,
+                            investmentAmount: _amountController.text,
                             description: _descriptionController.text,
                             interest: _interestController.text,
                             riskRating: _riskRatingController.text,
@@ -145,7 +150,9 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                         );
 
                         Get.back();
-                      } catch (e) {}
+                      } catch (e) {
+                        // Handle the error
+                      }
                     }
                   },
                 ),
@@ -170,13 +177,26 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
           .toList(),
     ).then((value) {
       if (value != null) {
-        // Ensure the text is updated safely
         setState(() {
           _investmentCategoryController.text = value;
         });
       }
     });
   }
+
+  Future<void> _selectDate(BuildContext context) async {
+    DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+    );
+
+    if (selectedDate != null) {
+      String formattedDate = DateFormat('dd-MM-yyyy').format(selectedDate);
+      setState(() {
+        _investmentDateController.text = formattedDate;
+      });
+    }
+  }
 }
-  //  var investmentBox = Hive.box< InvestmentModel>(kInvestmentHiveBox );
-  //                       investmentBox  = noteBox.values.toList();
