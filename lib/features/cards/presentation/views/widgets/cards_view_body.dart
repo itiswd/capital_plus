@@ -6,8 +6,8 @@ class CardsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: const CustomScrollView(
+    return const SafeArea(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: CardsViewAppBar(),
