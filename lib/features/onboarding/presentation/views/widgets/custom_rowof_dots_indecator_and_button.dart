@@ -6,11 +6,12 @@ import 'package:capital_plus/features/onboarding/presentation/views/widgets/mode
 import 'package:capital_plus/core/constants/app_colors.dart';
 
 class CustomRowofDotsIndecatorAndButton extends StatefulWidget {
-  const CustomRowofDotsIndecatorAndButton(
-      {super.key,
-      required this.currentPage,
-      required this.customItemList,
-      required this.onPressed});
+  const CustomRowofDotsIndecatorAndButton({
+    super.key,
+    required this.currentPage,
+    required this.customItemList,
+    required this.onPressed,
+  });
   final int currentPage;
   final List<CustomItem> customItemList;
   final void Function() onPressed;
@@ -25,6 +26,7 @@ class _CustomRowofDotsIndecatorAndButtonState
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         DotsIndicator(
           dotsCount: widget.customItemList.length,
@@ -32,8 +34,8 @@ class _CustomRowofDotsIndecatorAndButtonState
           decorator: DotsDecorator(
             color: AppColor.grey,
             activeColor: AppColor.darkGrey,
-            size: Size.square(10.0.r),
-            activeSize: Size(18.0.w, 10.0.h),
+            size: Size.square(8.0.r),
+            activeSize: Size(16.0.w, 8.0.h),
             activeShape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0.r),
             ), // Active dot shape
