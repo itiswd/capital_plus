@@ -87,6 +87,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Outfit-SemiBold.ttf
           weight: 600
+    - family: Arial
+      fonts:
+        - asset: assets/fonts/Arial Unicode MS.ttf
+          weight: 400
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_assets:

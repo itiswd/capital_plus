@@ -1,8 +1,9 @@
+import 'package:capital_plus/features/add_investment/add_investment_view.dart';
+import 'package:capital_plus/features/home/home_view.dart';
+import 'package:capital_plus/features/onboarding/onboarding_view.dart';
+import 'package:capital_plus/features/premium/premium_view.dart';
+import 'package:capital_plus/features/splash/splash_view.dart';
 import 'package:capital_plus/main.dart';
-import 'package:capital_plus/screens/add_investment_view.dart';
-import 'package:capital_plus/screens/home_view.dart';
-import 'package:capital_plus/screens/onboarding_view.dart';
-import 'package:capital_plus/screens/splash_view.dart';
 import 'package:get/get.dart';
 
 abstract class AppRouter {
@@ -11,6 +12,7 @@ abstract class AppRouter {
   static const kHomeView = '/homeView';
   static const kStart = '/start';
   static const kAddInvestmentView = '/kAddInvestmentView';
+  static const kPremiumView = '/kPremiumView';
 
   static final routes = [
     GetPage(
@@ -32,6 +34,10 @@ abstract class AppRouter {
     GetPage(
       name: kAddInvestmentView,
       page: () => const AddInvestmentView(),
+    ),
+    GetPage(
+      name: kPremiumView,
+      page: () => const PremiumView(),
     ),
   ];
 }

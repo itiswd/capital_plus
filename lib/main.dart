@@ -1,7 +1,9 @@
+import 'package:capital_plus/features/home/home_view.dart';
+import 'package:capital_plus/features/settings/settings_view.dart';
+import 'package:capital_plus/features/vocabulary/vocabulary_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:capital_plus/screens/home_view.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/core/utils/my_bindings.dart';
@@ -44,11 +46,7 @@ class CapitalPulseApp extends StatelessWidget {
             getPages: AppRouter.routes,
             theme: ThemeData(
               fontFamily: 'Montserrat',
-<<<<<<< HEAD
-              scaffoldBackgroundColor: AppColor.white
-=======
               scaffoldBackgroundColor: AppColor.white,
->>>>>>> 1d9b9363d9bbc25b29c6f6181f3cbe4265f959fb
             ),
           ),
         );
@@ -68,7 +66,7 @@ class Start extends ConsumerWidget {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColor.lightGrey,
+        backgroundColor: AppColor.white,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         elevation: 0,
@@ -102,25 +100,29 @@ class Start extends ConsumerWidget {
         children: const [
           HomeView(),
           Scaffold(
-              body: Center(
-                  child: Text('2',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24)))),
+            body: Center(
+              child: Text(
+                '2',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+          ),
           Scaffold(
-              body: Center(
-                  child: Text('3',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24)))),
-          Scaffold(
-              body: Center(
-                  child: Text('4',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24)))),
-          Scaffold(
-              body: Center(
-                  child: Text('5',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 24)))),
+            body: Center(
+              child: Text(
+                '3',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+          ),
+          VocabularyView(),
+          SettingsView(),
         ],
       ),
     );
