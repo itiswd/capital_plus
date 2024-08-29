@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../manager/lesson_element_state.dart';
 import '../../../../../core/utils/app_styles.dart';
