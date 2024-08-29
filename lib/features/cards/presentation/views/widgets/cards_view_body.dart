@@ -47,6 +47,8 @@ class CustomCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding:
+          EdgeInsets.symmetric(horizontal: kHorizontalPadding, vertical: 16.h),
       decoration: BoxDecoration(
         color: AppColor.lightGrey,
         borderRadius: BorderRadius.circular(16.r),
@@ -74,6 +76,7 @@ class CustomCardItem extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 8.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -85,7 +88,7 @@ class CustomCardItem extends StatelessWidget {
               ),
               SvgPicture.asset(Assets.iconsArrowLeft)
             ],
-          )
+          ),
         ],
       ),
     );
