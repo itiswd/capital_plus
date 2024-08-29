@@ -2,6 +2,7 @@ import 'package:capital_plus/core/constants/app_assets.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
 const double kHorizontalPadding = 16.0;
+const String kInvestmentHiveBox = 'kInvestmentBox';
 Map<String, double> chartValues = {
   'Mo': 200,
   'Tu': 250,
