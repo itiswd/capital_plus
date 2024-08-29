@@ -5,8 +5,6 @@ import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
-import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
 
 class LessonElement extends ConsumerWidget {
   const LessonElement({super.key, required this.index});
@@ -17,17 +15,12 @@ class LessonElement extends ConsumerWidget {
     final isChecked = ref.watch(lessonElementProvider(index));
     final lessonElementState = ref.read(lessonElementProvider(index).notifier);
 
-    bool isLocked =
-        (index == 8 || index == 9) && !SharedPref.getBool(kIsPrimium);
-    Color filterColor = isLocked ? AppColor.grey : Colors.transparent;
-    Color? textColor = isLocked ? AppColor.grey : null;
-
     return GestureDetector(
       onTap: () {
         // Handle tap action
       },
       child: Container(
-        margin:const EdgeInsets.only(bottom: 16.0),
+        margin: const EdgeInsets.only(bottom: 16.0),
         padding: const EdgeInsets.only(top: 16, bottom: 16, left: 16),
         decoration: BoxDecoration(
           color: AppColor.lightGrey,
@@ -37,11 +30,11 @@ class LessonElement extends ConsumerWidget {
           children: [
             ColorFiltered(
               colorFilter: ColorFilter.mode(
-                filterColor,
+                lessonElementState.getFilterColor(index),
                 BlendMode.srcATop,
               ),
               child: Container(
-                padding:const EdgeInsets.all(11.0),
+                padding: const EdgeInsets.all(11.0),
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColor.blueAccent),
                   borderRadius: BorderRadius.circular(12.0),
@@ -49,22 +42,24 @@ class LessonElement extends ConsumerWidget {
                 child: SvgPicture.asset(Assets.iconsIcRoundNoteAlt),
               ),
             ),
-           const SizedBox(width: 12.0),
+            const SizedBox(width: 12.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Lesson ${index + 1}",
-                  style: AppStyles.header2.copyWith(color: textColor),
+                  style: AppStyles.header2
+                      .copyWith(color: lessonElementState.getTextColor(index)),
                 ),
                 Text(
                   lessonElementState.getLesson(index),
-                  style: AppStyles.body1Regular.copyWith(color: textColor),
+                  style: AppStyles.body1Regular
+                      .copyWith(color: lessonElementState.getTextColor(index)),
                 ),
               ],
             ),
             const Spacer(),
-            isLocked
+            lessonElementState.isLocked(index)
                 ? const Padding(
                     padding: EdgeInsets.only(right: 10.0),
                     child: Icon(
