@@ -1,10 +1,10 @@
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
-import 'package:capital_plus/core/utils/app_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CardsViewAppBar extends StatelessWidget {
   const CardsViewAppBar({super.key});
@@ -26,7 +26,7 @@ class CardsViewAppBar extends StatelessWidget {
                 'Find Out More!',
                 style: AppStyles.header1.copyWith(color: AppColor.white),
               ),
-              SvgPicture.asset(Assets.search),
+              SvgPicture.asset(Assets.iconsSearch),
             ],
           ),
           Text(
