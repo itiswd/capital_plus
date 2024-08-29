@@ -53,51 +53,32 @@ class _OnboardingBodyState extends State<OnboardingBody> {
 
   @override
   Widget build(BuildContext context) {
-    List<CustomItem> customItemList = [
-      CustomItem(
-        svgPicture: SvgPicture.asset(Assets.iconsLogoOnboarding1),
-        title: 'Welcome to CapitalPulse!',
-        subtitle:
-            'Your personal financial consultant\nis always at hand. A simple way\nto manage your finances.',
-      ),
-      CustomItem(
-        svgPicture: SvgPicture.asset(Assets.iconsLogoOnboarding2),
-        title: 'Manage Your Portfolio!',
-        subtitle:
-            'Monitor your portfolio status in real\ntime, analyze performance\nand make informed decisions.',
-      ),
-      CustomItem(
-        svgPicture: SvgPicture.asset(Assets.iconsLogoOnboarding3),
-        title: 'Become a Financial Expert!',
-        subtitle:
-            'Access a vast library of lessons\nand articles to expand your\nknowledge of financial markets',
-      ),
-      // Add more items as needed
-    ];
-
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 10.0.h),
+            SizedBox(height: 20.0.h),
             TextButton(
-                onPressed: () {
-                  SharedPref.setBool(kIsOnBoardingView, true);
-                  Get.toNamed(AppRouter.kHomeView);
-                },
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Skip',
-                    style: AppStyles.body2Medium
-                        .copyWith(color: AppColor.darkGrey),
-                  ),
-                )),
-            SizedBox(height: 5.0.h),
+              onPressed: () {
+                SharedPref.setBool(kIsOnBoardingView, true);
+                Get.toNamed(AppRouter.kHomeView);
+              },
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Skip',
+                  style:
+                      AppStyles.body2Medium.copyWith(color: AppColor.darkGrey),
+                ),
+              ),
+            ),
+            SizedBox(height: 20.0.h),
             CustomOnBoarding(
-                pageController: _pageController,
-                customItemList: customItemList),
+              pageController: _pageController,
+              customItemList: customItemList,
+            ),
             CustomRowofDotsIndecatorAndButton(
                 currentPage: _currentPage.toInt(),
                 customItemList: customItemList,

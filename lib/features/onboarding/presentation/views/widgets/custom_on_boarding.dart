@@ -25,17 +25,21 @@ class CustomOnBoarding extends StatelessWidget {
             return Column(
               children: [
                 customItemList[index].svgPicture,
-                SizedBox(height: 20.0.h),
+                SizedBox(height: 52.0.h),
                 Text(
                   customItemList[index].title,
-                  style: AppStyles.header1.copyWith(fontSize: 22.sp),
+                  style: AppStyles.header1.copyWith(
+                    fontSize: 22.sp,
+                    fontFamily: 'Outfit',
+                  ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 24.h),
                 Text(
                   customItemList[index].subtitle,
-                  style:
-                      AppStyles.body1Regular.copyWith(color: AppColor.darkGrey),
+                  style: AppStyles.body1Regular.copyWith(
+                    color: AppColor.darkGrey,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ],
