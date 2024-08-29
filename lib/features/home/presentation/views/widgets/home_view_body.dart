@@ -1,3 +1,5 @@
+import 'package:capital_plus/core/constants/app_consts.dart';
+import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:capital_plus/features/home/presentation/views/widgets/investments.dart';
 import 'package:capital_plus/features/home/presentation/views/widgets/main_card_chart.dart';
 import 'package:capital_plus/features/home/presentation/views/widgets/main_card_header.dart';
@@ -5,9 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:hive/hive.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
+
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
+  int getTotalInvestmentAmount() {
+    return investmentBox.values.toList().fold(
+        0, (sum, investment) => sum + int.parse(investment.investmentAmount));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +42,9 @@ class HomeBody extends StatelessWidget {
               child: Column(
                 children: [
                   //Header
-                  const MainCardHeader(),
+                  MainCardHeader(
+                    totalAmount: getTotalInvestmentAmount().toString(),
+                  ),
                   SizedBox(height: 36.0.h),
                   //Chart
                   const MainCardChart(),

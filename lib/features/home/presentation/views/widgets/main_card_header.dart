@@ -8,8 +8,10 @@ import 'package:get/get.dart';
 import 'package:svg_flutter/svg.dart';
 
 class MainCardHeader extends StatelessWidget {
+  final String totalAmount;
   const MainCardHeader({
     super.key,
+    required this.totalAmount,
   });
 
   @override
@@ -50,7 +52,7 @@ class MainCardHeader extends StatelessWidget {
                 ),
                 SizedBox(width: 8.0.w),
                 Text(
-                  '15000',
+                  totalAmount,
                   style: AppStyles.header1.copyWith(
                     color: AppColor.white,
                     fontFamily: 'Outfit',

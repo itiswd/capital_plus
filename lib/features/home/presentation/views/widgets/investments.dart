@@ -21,7 +21,6 @@ class _InvestmentsState extends State<Investments> {
   bool visible = false;
   late Box<InvestmentModel> investmentBox;
   late List investData;
-
   @override
   void initState() {
     super.initState();
