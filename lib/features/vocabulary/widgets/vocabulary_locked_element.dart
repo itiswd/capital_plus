@@ -67,7 +67,7 @@ class VocabularyLockedElement extends StatelessWidget {
               ],
             ),
             SizedBox(height: 12.0.h),
-            MainPremiumButton(
+            MainButton(
               onTap: () => Get.toNamed(AppRouter.kPremiumView),
               text: 'Buy Premium \$0,99',
               color: AppColor.lightGreenAccent,

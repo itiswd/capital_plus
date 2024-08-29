@@ -33,7 +33,7 @@ class InvestmentLockedRow extends StatelessWidget {
             child: SvgPicture.asset(
               width: 15.24.w,
               height: 20.0.h,
-              Assets.iconsIcRoundLock,
+              Assets.iconsLock,
             ),
           )
         ],

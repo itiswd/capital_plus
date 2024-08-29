@@ -10,6 +10,14 @@ class Assets {
   /// assets/icons/arrow-down.svg
   static const String iconsArrowDown = "assets/icons/arrow-down.svg";
 
+  /// Assets for iconsArrowGroup
+  /// assets/icons/arrow_group.svg
+  static const String iconsArrowGroup = "assets/icons/arrow_group.svg";
+
+  /// Assets for iconsArrowLeft
+  /// assets/icons/arrow_left.svg
+  static const String iconsArrowLeft = "assets/icons/arrow_left.svg";
+
   /// Assets for iconsButtonOpen
   /// assets/icons/button_open.svg
   static const String iconsButtonOpen = "assets/icons/button_open.svg";
@@ -37,10 +45,6 @@ class Assets {
   /// Assets for iconsFluentIosArrow24Filled
   /// assets/icons/fluent_ios_arrow_24_filled.svg
   static const String iconsFluentIosArrow24Filled = "assets/icons/fluent_ios_arrow_24_filled.svg";
-
-  /// Assets for iconsIcRoundLock
-  /// assets/icons/ic_round-lock.svg
-  static const String iconsIcRoundLock = "assets/icons/ic_round-lock.svg";
 
   /// Assets for iconsInvestmentBondsIconicon
   /// assets/icons/investment_bonds_iconicon.svg
@@ -85,5 +89,9 @@ class Assets {
   /// Assets for iconsLogoOnboarding3
   /// assets/icons/logo_onboarding_3.svg
   static const String iconsLogoOnboarding3 = "assets/icons/logo_onboarding_3.svg";
+
+  /// Assets for iconsOpenLock
+  /// assets/icons/open_lock.svg
+  static const String iconsOpenLock = "assets/icons/open_lock.svg";
 }
 

@@ -33,11 +33,12 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Form(
             key: formState,
             child: Column(
               children: [
+                SizedBox(height: 20.0.h),
                 const AddInvestmentViewAppBar(),
                 SizedBox(height: 10.h),
                 CustomAddInvestmentTextField(

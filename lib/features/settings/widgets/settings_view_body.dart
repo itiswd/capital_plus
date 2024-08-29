@@ -26,27 +26,27 @@ class SettingsViewBody extends StatelessWidget {
               ),
             ),
             SizedBox(height: 24.0.h),
-            const MainPremiumButton(
+            const MainButton(
               text: 'Privacy Policy',
               color: AppColor.lightGrey,
             ),
             SizedBox(height: 16.0.h),
-            const MainPremiumButton(
+            const MainButton(
               text: 'Terms of Use',
               color: AppColor.lightGrey,
             ),
             SizedBox(height: 16.0.h),
-            const MainPremiumButton(
+            const MainButton(
               text: 'Support form',
               color: AppColor.lightGrey,
             ),
             SizedBox(height: 16.0.h),
-            const MainPremiumButton(
+            const MainButton(
               text: 'Restore Purchases',
               color: AppColor.lightGrey,
             ),
             SizedBox(height: 16.0.h),
-            MainPremiumButton(
+            MainButton(
               onTap: () => Get.toNamed(AppRouter.kPremiumView),
               text: 'Buy Premium \$0,99',
               color: AppColor.lightGreenAccent,

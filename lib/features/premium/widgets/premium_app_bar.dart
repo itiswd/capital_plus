@@ -5,8 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:svg_flutter/svg.dart';
 
-class AddInvestmentViewAppBar extends StatelessWidget {
-  const AddInvestmentViewAppBar({super.key});
+class PremiumAppBar extends StatelessWidget {
+  const PremiumAppBar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,18 +19,17 @@ class AddInvestmentViewAppBar extends StatelessWidget {
             Get.back();
           },
           child: SvgPicture.asset(
-            width: 24.w,
-            height: 24.h,
+            width: 24.0.w,
             Assets.iconsArrowLeft,
           ),
         ),
-        SizedBox(width: 12.w),
+        SizedBox(width: 12.0.w),
         Text(
-          'Add Investment',
+          'Premium Benefits',
           style: AppStyles.header2.copyWith(
             fontFamily: 'Outfit',
           ),
-        )
+        ),
       ],
     );
   }
