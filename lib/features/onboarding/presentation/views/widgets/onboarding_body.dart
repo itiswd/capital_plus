@@ -53,7 +53,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
