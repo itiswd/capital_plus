@@ -18,7 +18,7 @@ class Investments extends StatefulWidget {
 }
 
 class _InvestmentsState extends State<Investments> {
-  bool visible = false;
+  List<bool> isOpen = List.filled(100, false);
   late Box<InvestmentModel> investmentBox;
   late List investData;
   @override
@@ -45,11 +45,11 @@ class _InvestmentsState extends State<Investments> {
                 return GestureDetector(
                   onTap: () {
                     setState(() {
-                      visible = !visible;
+                      isOpen[index] = !isOpen[index];
                     });
                   },
                   child: Container(
-                    height: visible == true ? 212.0.h : 82.0.h,
+                    height: isOpen[index] == true ? 212.0.h : 82.0.h,
                     color: AppColor.white,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -103,6 +103,7 @@ class _InvestmentsState extends State<Investments> {
                                             ],
                                           ),
                                           SizedBox(height: 4.0.h),
+                                          //Name
                                           SizedBox(
                                             height: 22.0.h,
                                             child: Text(
@@ -115,7 +116,7 @@ class _InvestmentsState extends State<Investments> {
                                     ),
                                   ),
                                   Visibility(
-                                    visible: visible,
+                                    visible: isOpen[index],
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -128,10 +129,15 @@ class _InvestmentsState extends State<Investments> {
                                             style: AppStyles.body2Regular,
                                           ),
                                         ),
+                                        //Description
                                         SizedBox(
                                           height: 22.0.h,
                                           child: Text(
-                                            'Investment user text',
+                                            investData[index]
+                                                    .description
+                                                    .isEmpty
+                                                ? 'Investment user text'
+                                                : investData[index].description,
                                             style: AppStyles.body2Regular,
                                           ),
                                         ),
