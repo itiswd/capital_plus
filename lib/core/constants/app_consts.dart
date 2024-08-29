@@ -13,35 +13,12 @@ Map<String, double> chartValues = {
   'Su': 100,
 };
 
-final Map<String, dynamic> investments = {
-  'name': [
-    'Crypto Investment',
-    'Cash Investment',
-    'Stocks Investment',
-    'Bonds Investment',
-    'Other Investment',
-  ],
-  'userName': [
-    'User name investment',
-    'User name investment',
-    'User name investment',
-    'User name investment',
-    'User name investment',
-  ],
-  'amount': [
-    120,
-    200,
-    300,
-    400,
-    120,
-  ],
-  'thumbnail': [
-    Assets.iconsInvestmentCryptoIcon,
-    Assets.iconsInvestmentCashIcon,
-    Assets.iconsInvestmentStocksIcon,
-    Assets.iconsInvestmentBondsIconicon,
-    Assets.iconsInvestmentOtherIcon,
-  ],
+final Map<String, String> investments = {
+  'Crypto Investment': Assets.iconsInvestmentCryptoIcon,
+  'Cash Investment': Assets.iconsInvestmentCashIcon,
+  'Stocks Investment': Assets.iconsInvestmentStocksIcon,
+  'Bonds Investment': Assets.iconsInvestmentBondsIconicon,
+  'Other Investment': Assets.iconsInvestmentOtherIcon,
 };
 
 final List<String> investmentCategories = [

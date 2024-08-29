@@ -19,6 +19,8 @@ class AddInvestmentBody extends StatefulWidget {
   State<AddInvestmentBody> createState() => _AddInvestmentBodyState();
 }
 
+var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
+
 class _AddInvestmentBodyState extends State<AddInvestmentBody> {
   final TextEditingController _investmentCategoryController =
       TextEditingController();
@@ -125,18 +127,16 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 SizedBox(height: 36.h),
                 CustomButton(
                   onTap: () {
+                    setState(() {});
                     if (formState.currentState!.validate()) {
                       try {
-                        var investmentBox =
-                            Hive.box<InvestmentModel>(kInvestmentHiveBox);
                         investmentBox.add(
                           InvestmentModel(
                             investmentCategory:
                                 _investmentCategoryController.text,
                             investmentName: _investmentNameController.text,
                             investmentDate: _investmentDateController.text,
-                            investmentAmount:
-                                _investmentCategoryController.text,
+                            investmentAmount: _amountController.text,
                             description: _descriptionController.text,
                             interest: _interestController.text,
                             riskRating: _riskRatingController.text,
