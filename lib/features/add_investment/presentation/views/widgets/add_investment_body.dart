@@ -2,12 +2,14 @@ import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/functions/validate_text_field.dart';
+import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/add_investment_view_app_bar.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_add_investment_text_field.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
 import 'package:svg_flutter/svg.dart';
 
 class AddInvestmentBody extends StatefulWidget {
@@ -20,11 +22,22 @@ class AddInvestmentBody extends StatefulWidget {
 class _AddInvestmentBodyState extends State<AddInvestmentBody> {
   final TextEditingController _investmentCategoryController =
       TextEditingController();
+  final TextEditingController _investmentNameController =
+      TextEditingController();
+  final TextEditingController _investmentDateController =
+      TextEditingController();
+  final TextEditingController _amountController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _interestController = TextEditingController();
+  final TextEditingController _riskRatingController = TextEditingController();
+  final TextEditingController _expectedReturnController =
+      TextEditingController();
+
   GlobalKey<FormState> formState = GlobalKey<FormState>();
 
   @override
   void dispose() {
-    _investmentCategoryController.dispose();
+    _investmentNameController.dispose();
     super.dispose();
   }
 
@@ -62,27 +75,32 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Investment name',
+                  controller: _investmentNameController,
                   validator: (val) {
                     return valiTextField(val!);
                   },
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Investment date',
+                  controller: _investmentDateController,
                   validator: (val) {
                     return valiTextField(val!);
                   },
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Amount',
+                  controller: _amountController,
                   validator: (val) {
                     return valiTextField(val!);
                   },
                 ),
-                const CustomAddInvestmentTextField(
+                CustomAddInvestmentTextField(
                   labelText: 'Description',
+                  controller: _descriptionController,
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Interest',
+                  controller: _interestController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -90,6 +108,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Risk rating',
+                  controller: _riskRatingController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -97,6 +116,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Expected return',
+                  controller: _expectedReturnController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -106,9 +126,26 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomButton(
                   onTap: () {
                     if (formState.currentState!.validate()) {
-                      // Add Investment logic
-
-                      Get.back();
+                      try {
+                        var investmentBox =
+                            Hive.box<InvestmentModel>('kInvestmentBox');
+                        investmentBox.add(
+                          InvestmentModel(
+                            investmentCategory:
+                                _investmentCategoryController.text,
+                            investmentName: _investmentNameController.text,
+                            investmentDate: _investmentDateController.text,
+                            investmentAmount:
+                                _investmentCategoryController.text,
+                            description: _descriptionController.text,
+                            interest: _interestController.text,
+                            riskRating: _riskRatingController.text,
+                            expectedReturn: _expectedReturnController.text,
+                          ),
+                        );
+                        print('success');
+                        Get.back();
+                      } catch (e) {}
                     }
                   },
                 ),
