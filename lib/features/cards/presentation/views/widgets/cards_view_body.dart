@@ -63,7 +63,11 @@ class CustomCardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(card.logo),
+              SvgPicture.asset(
+                'assets/icons/visa.svg',
+                color: AppColor.black,
+                fit: BoxFit.fill,
+              ),
               Column(
                 children: [
                   Text(
