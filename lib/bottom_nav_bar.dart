@@ -1,11 +1,12 @@
-import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/features/lessons/lessons_view.dart';
 import 'package:capital_plus/features/home/presentation/views/home_view.dart';
 import 'package:capital_plus/features/settings/presentation/views/settings_view.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/vocabulary_view.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 final bottomBarProvider = StateProvider<int>((ref) => 0);
 
@@ -62,17 +63,7 @@ class BottomNavBarController extends ConsumerWidget {
               ),
             ),
           ),
-          Scaffold(
-            body: Center(
-              child: Text(
-                '3',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-          ),
+     LessonsView(),
           VocabularyView(),
           SettingsView(),
         ],

@@ -93,5 +93,9 @@ class Assets {
   /// Assets for iconsOpenLock
   /// assets/icons/open_lock.svg
   static const String iconsOpenLock = "assets/icons/open_lock.svg";
+
+  /// Assets for iconsVector
+  /// assets/icons/Vector.svg
+  static const String iconsVector = "assets/icons/Vector.svg";
 }
 
