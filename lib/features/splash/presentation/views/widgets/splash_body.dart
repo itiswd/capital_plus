@@ -43,7 +43,7 @@ class _SplashBodyState extends State<SplashBody> {
             width: MediaQuery.of(context).size.width * 0.4026,
             animation: true,
             lineHeight: 3.h,
-            animationDuration: 2300,
+            animationDuration: 2000,
             percent: 1,
             barRadius: const Radius.circular(10),
             progressColor: AppColor.blue,
