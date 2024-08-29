@@ -14,6 +14,7 @@ import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
 // ignore_for_file: deprecated_member_use
 
 void main() async {
+  // await Hive.initFlutter();
   await ScreenUtil.ensureScreenSize();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
