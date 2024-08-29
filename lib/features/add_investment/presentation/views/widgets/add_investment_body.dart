@@ -108,6 +108,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Interest',
                   controller: _interestController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -116,6 +117,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomAddInvestmentTextField(
                   labelText: 'Risk rating',
                   controller: _riskRatingController,
+                  readOnly: true,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,
                     fit: BoxFit.contain,
@@ -123,6 +125,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 ),
                 CustomAddInvestmentTextField(
                   labelText: 'Expected return',
+                  readOnly: true,
                   controller: _expectedReturnController,
                   suffixIcon: SvgPicture.asset(
                     Assets.iconsLock,

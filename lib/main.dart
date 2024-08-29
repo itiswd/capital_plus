@@ -46,7 +46,7 @@ class CapitalPulseApp extends StatelessWidget {
             initialRoute: AppRouter.kSplashView,
             getPages: AppRouter.routes,
             theme: ThemeData(
-              fontFamily: 'Montserrat',
+              fontFamily: appFont,
               scaffoldBackgroundColor: AppColor.white,
             ),
           ),
