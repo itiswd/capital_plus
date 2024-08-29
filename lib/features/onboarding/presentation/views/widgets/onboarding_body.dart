@@ -4,11 +4,11 @@ import '../../../../../core/utils/app_styles.dart';
 import 'custom_rowof_dots_indecator_and_button.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:capital_plus/features/onboarding/presentation/views/widgets/model.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/features/onboarding/presentation/views/widgets/custom_on_boarding.dart';
 import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
+import 'package:capital_plus/features/onboarding/presentation/views/widgets/model.dart';
+import 'package:capital_plus/features/onboarding/presentation/views/widgets/custom_on_boarding.dart';
 
 class OnboardingBody extends StatefulWidget {
   const OnboardingBody({super.key});
@@ -57,7 +57,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 20.0.h),
+            SizedBox(height: 10.0.h),
             TextButton(
               onPressed: () {
                 SharedPref.setBool(kIsOnBoardingView, true);
@@ -75,7 +75,6 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                 ),
               ),
             ),
-            SizedBox(height: 20.0.h),
             CustomOnBoarding(
               pageController: _pageController,
               customItemList: customItemList,
