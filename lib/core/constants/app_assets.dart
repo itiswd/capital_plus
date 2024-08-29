@@ -46,6 +46,10 @@ class Assets {
   /// assets/icons/fluent_ios_arrow_24_filled.svg
   static const String iconsFluentIosArrow24Filled = "assets/icons/fluent_ios_arrow_24_filled.svg";
 
+  /// Assets for iconsIcRoundNoteAlt
+  /// assets/icons/ic_round-note-alt.svg
+  static const String iconsIcRoundNoteAlt = "assets/icons/ic_round-note-alt.svg";
+
   /// Assets for iconsInvestmentBondsIconicon
   /// assets/icons/investment_bonds_iconicon.svg
   static const String iconsInvestmentBondsIconicon = "assets/icons/investment_bonds_iconicon.svg";

@@ -1,17 +1,17 @@
+import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:svg_flutter/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
+import 'package:intl/intl.dart'; // Import this for date formatting
 import 'package:capital_plus/core/functions/validate_text_field.dart';
 import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
+import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/add_investment_view_app_bar.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_add_investment_text_field.dart';
-import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:hive/hive.dart';
-import 'package:intl/intl.dart'; // Import this for date formatting
-import 'package:svg_flutter/svg.dart';
 
 class AddInvestmentBody extends StatefulWidget {
   const AddInvestmentBody({super.key});
@@ -151,11 +151,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                         debugPrint('success');
                         Get.back();
                       } catch (e) {
-<<<<<<< HEAD
                         // Handle the error
-=======
-                        debugPrint(e.toString());
->>>>>>> 57f77650019413702d7dc4c5d539719d9ed697b6
                       }
                     }
                   },

@@ -3,8 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/features/lessons/lessons_view.dart';
 import 'package:capital_plus/features/home/presentation/views/home_view.dart';
+import 'package:capital_plus/features/lessons/presentation/views/lessons_view.dart';
 import 'package:capital_plus/features/settings/presentation/views/settings_view.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/vocabulary_view.dart';
 
