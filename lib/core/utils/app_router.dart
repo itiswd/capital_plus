@@ -1,16 +1,16 @@
+import 'package:capital_plus/bottom_nav_bar.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/add_investment_view.dart';
 import 'package:capital_plus/features/home/presentation/views/home_view.dart';
 import 'package:capital_plus/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:capital_plus/features/premium/presentation/views/premium_view.dart';
 import 'package:capital_plus/features/splash/presentation/views/splash_view.dart';
-import 'package:capital_plus/main.dart';
 import 'package:get/get.dart';
 
 abstract class AppRouter {
   static const String kSplashView = '/splashView';
   static const kOnBoardingView = '/onBoardingView';
   static const kHomeView = '/homeView';
-  static const kStart = '/start';
+  static const kBottomNavBarController = '/KBottomNavBarController';
   static const kAddInvestmentView = '/kAddInvestmentView';
   static const kPremiumView = '/kPremiumView';
 
@@ -28,8 +28,8 @@ abstract class AppRouter {
       page: () => const HomeView(),
     ),
     GetPage(
-      name: kStart,
-      page: () => const Start(),
+      name: kBottomNavBarController,
+      page: () => const BottomNavBarController(),
     ),
     GetPage(
       name: kAddInvestmentView,
