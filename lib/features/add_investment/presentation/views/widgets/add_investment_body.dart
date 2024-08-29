@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
-import 'package:intl/intl.dart'; // Import this for date formatting
 import 'package:svg_flutter/svg.dart';
 
 class AddInvestmentBody extends StatefulWidget {
@@ -151,11 +150,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                         debugPrint('success');
                         Get.back();
                       } catch (e) {
-<<<<<<< HEAD
                         // Handle the error
-=======
-                        debugPrint(e.toString());
->>>>>>> 57f77650019413702d7dc4c5d539719d9ed697b6
                       }
                     }
                   },
@@ -197,7 +192,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
     );
 
     if (selectedDate != null) {
-      String formattedDate = DateFormat('dd-MM-yyyy').format(selectedDate);
+      String formattedDate = dateFormat.format(selectedDate);
       setState(() {
         _investmentDateController.text = formattedDate;
       });

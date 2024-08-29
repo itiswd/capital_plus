@@ -1,8 +1,10 @@
 import 'package:capital_plus/core/constants/app_assets.dart';
+import 'package:intl/intl.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
 const double kHorizontalPadding = 16.0;
 const String kInvestmentHiveBox = 'kInvestmentBox';
+DateFormat dateFormat = DateFormat('dd-MM-yyyy');
 Map<String, double> chartValues = {
   'Mo': 200,
   'Tu': 250,
