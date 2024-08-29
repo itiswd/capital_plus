@@ -56,7 +56,7 @@ class _InvestmentsListState extends State<InvestmentsList> {
                       SvgPicture.asset(
                         width: 50.0.w,
                         height: 50.0.h,
-                        investments[investData[index].investmentCategory]!,
+                        investmentsIcons[investData[index].investmentCategory]!,
                       ),
                       SizedBox(width: 12.0.w),
                       Expanded(

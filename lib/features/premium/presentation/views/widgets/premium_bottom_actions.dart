@@ -17,9 +17,9 @@ class PremiumBottomAction extends StatelessWidget {
           3,
           (index) {
             return Text(
-              premiumActions[index],
+              premiumActionTitles[index],
               style: AppStyles.body2Regular.copyWith(
-                color: premiumActions[index] == 'Restore'
+                color: premiumActionTitles[index] == 'Restore'
                     ? AppColor.red
                     : AppColor.darkGrey,
               ),
