@@ -11,7 +11,7 @@ class CardsView extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: Column(
+            title: const Column(
               children: [
                 Text('kdnj dkndjb dkjdb dknjdb '),
                 Text('kdnj dkndjb dkjdb dknjdb '),
