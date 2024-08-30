@@ -1,16 +1,12 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../manager/lesson_element_state.dart';
-import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
-
-
 
 class LessonElement extends ConsumerWidget {
   const LessonElement({super.key, required this.index});
@@ -23,7 +19,7 @@ class LessonElement extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-     lessonElementState.navigation(index);
+        lessonElementState.navigation(index);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16.0),

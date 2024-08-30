@@ -9,7 +9,9 @@ import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import '../../../../../core/service/shared_preferences_singleton.dart';
 import '../../../../lessons/presentation/manager/lesson_element_state.dart';
-final lessonElementProvider = StateNotifierProvider.family<LessonElementState, bool, int>(
+
+final lessonElementProvider =
+    StateNotifierProvider.family<LessonElementState, bool, int>(
   (ref, index) => LessonElementState(ref),
 );
 
@@ -17,10 +19,10 @@ class SplashBody extends ConsumerStatefulWidget {
   const SplashBody({super.key});
 
   @override
-  _SplashBodyState createState() => _SplashBodyState();
+  SplashBodyState createState() => SplashBodyState();
 }
 
-class _SplashBodyState extends ConsumerState<SplashBody> {
+class SplashBodyState extends ConsumerState<SplashBody> {
   @override
   void initState() {
     super.initState();
@@ -67,15 +69,13 @@ class _SplashBodyState extends ConsumerState<SplashBody> {
   }
 
   void _initializeLessonProvider() {
-    
     final lessonElementState = ref.read(lessonElementProvider(0).notifier);
-     
-  
+
     lessonElementState.initializeCheckedList();
   }
 
   void _executeNavigation() {
-    bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView) ;
+    bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView);
     Future.delayed(const Duration(seconds: 3), () {
       final route = isOnBoardingView
           ? AppRouter.kBottomNavBarController

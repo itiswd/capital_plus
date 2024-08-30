@@ -9,33 +9,25 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
 import 'package:capital_plus/features/lessons/presentation/manager/lessons_progress_details_notifier.dart';
 
-
 class LessonElementState extends StateNotifier<bool> {
-  LessonElementState(this.ref) : super(false) {
-  
-  }
+  LessonElementState(this.ref) : super(false);
   int x = 0;
   final Ref ref;
- 
 
   void navigation(int index) {
-    if(isLocked(index)){
-
-    }else{
-         
+    if (isLocked(index)) {
+    } else {
       updateBoolInList(index);
-        Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
-       
+      Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
     }
   }
 
   Future<void> initializeCheckedList() async {
-
     Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
     checkedList = box.get(klistofCheckBox,
         defaultValue: List<bool>.filled(lessonsList.length, false))!;
-         ref.read(counterProvider.notifier).getCheckBoxValues() ;
-        print("checkedList: $checkedList");
+    ref.read(counterProvider.notifier).getCheckBoxValues();
+    debugPrint("checkedList: $checkedList");
   }
 
   Future<void> updateBoolInList(int index) async {
@@ -52,15 +44,13 @@ class LessonElementState extends StateNotifier<bool> {
 
       // Step 4: Save the updated list back to the box
       await box.put(klistofCheckBox, boolList);
-       ref.read(counterProvider.notifier).getCheckBoxValues() ;
-        state = boolList[index];
-      print("checkedList OF   updateBoolInList: $checkedList");
+      ref.read(counterProvider.notifier).getCheckBoxValues();
+      state = boolList[index];
+      debugPrint("checkedList OF   updateBoolInList: $checkedList");
     } else {
-      print('Index out of bounds');
+      debugPrint('Index out of bounds');
     }
   }
-
-
 
   String getLesson(int index) => lessonsList[index];
 
