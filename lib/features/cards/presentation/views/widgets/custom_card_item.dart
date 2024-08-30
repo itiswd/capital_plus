@@ -13,67 +13,59 @@ class CustomCardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntrinsicHeight(
-      child: Container(
-        alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(
-            horizontal: kHorizontalPadding, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: AppColor.lightGrey,
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  card.logo,
-                  fit: BoxFit.fill,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Mkt Cap',
-                      style: AppStyles.body2Medium.copyWith(
-                        color: AppColor.darkBlue,
-                      ),
-                    ),
-                    SizedBox(height: 4.h),
-                    Text(
-                      card.assetsNum,
-                      style: AppStyles.body2Medium.copyWith(
-                        color: AppColor.blueAccent,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 8.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Text(
-                    card.name,
-                    style: AppStyles.header2.copyWith(
-                      fontFamily: appFontOutfit,
+    return Container(
+      padding:
+          EdgeInsets.symmetric(horizontal: kHorizontalPadding, vertical: 16.h),
+      decoration: BoxDecoration(
+        color: AppColor.lightGrey,
+        borderRadius: BorderRadius.circular(16.r),
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image.asset(card.logo),
+              Column(
+                children: [
+                  Text(
+                    'Mkt Cap',
+                    style: AppStyles.body2Medium.copyWith(
+                      color: AppColor.darkBlue,
                     ),
                   ),
+                  SizedBox(height: 4.h),
+                  Text(
+                    card.assetsNum,
+                    style: AppStyles.body2Medium.copyWith(
+                      color: AppColor.blueAccent,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(height: 10.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  card.name,
+                  style: AppStyles.header2.copyWith(
+                    fontFamily: appFontOutfit,
+                  ),
                 ),
-                SizedBox(width: 10.w),
-                SvgPicture.asset(
-                  Assets.iconsFluentIosArrow24Filled,
-                  height: 20.h,
-                  color: AppColor.blueAccent,
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+              SizedBox(width: 5.w),
+              SvgPicture.asset(
+                Assets.iconsFluentIosArrow24Filled,
+                height: 17.h,
+                color: AppColor.blueAccent,
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
