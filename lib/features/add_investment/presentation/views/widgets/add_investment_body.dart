@@ -138,7 +138,6 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 SizedBox(height: 36.h),
                 CustomButton(
                   onTap: () {
-                    setState(() {});
                     if (formState.currentState!.validate()) {
                       try {
                         investmentBox.add(
@@ -156,6 +155,7 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                         );
                         debugPrint('success');
                         Get.back();
+                        setState(() {});
                       } catch (e) {
                         // Handle the error
                       }
