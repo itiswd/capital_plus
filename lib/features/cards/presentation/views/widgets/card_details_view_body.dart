@@ -44,27 +44,32 @@ class CustomCardDetailsViewAppBar extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: SvgPicture.asset(
-              Assets.arrowLeft,
-            ),
-          ),
-          SizedBox(width: 12.w),
-          SizedBox(
-            width: 200.w,
-            child: Text(
-              appBarTitle,
-              style: AppStyles.header2.copyWith(
-                color: AppColor.white,
-                fontFamily: appFontOutfit,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Get.back();
+                },
+                child: SvgPicture.asset(
+                  Assets.arrowLeft,
+                ),
               ),
-            ),
+              SizedBox(width: 12.w),
+              SizedBox(
+                width: 200.w,
+                child: Text(
+                  appBarTitle,
+                  style: AppStyles.header2.copyWith(
+                    color: AppColor.white,
+                    fontFamily: appFontOutfit,
+                  ),
+                ),
+              ),
+            ],
           ),
-          const Spacer(),
           SvgPicture.asset(Assets.iconsSearch)
         ],
       ),
