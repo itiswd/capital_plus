@@ -1,6 +1,5 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
@@ -17,6 +16,7 @@ class CardsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: CardsViewAppBar(),

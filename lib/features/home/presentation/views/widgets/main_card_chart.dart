@@ -1,8 +1,10 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive/hive.dart';
 
 class MainCardChart extends StatelessWidget {
   const MainCardChart({
@@ -11,6 +13,8 @@ class MainCardChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
+    late List investData = investmentBox.values.toList();
     //Max value
     final maxValue = chartValues.values.reduce(
       (value, element) => value > element ? value : element,
@@ -27,11 +31,13 @@ class MainCardChart extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  height:
-                      (chartValues.values.elementAt(index) / maxValue * 76).h,
+                  height: investData.isEmpty
+                      ? 38.0.h
+                      : (chartValues.values.elementAt(index) / maxValue * 76).h,
                   width: 16.0.w,
                   decoration: BoxDecoration(
-                    color: AppColor.blue,
+                    color:
+                        investData.isEmpty ? AppColor.darkGrey : AppColor.blue,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0.r),
                       topRight: Radius.circular(4.0.r),

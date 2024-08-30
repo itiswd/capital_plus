@@ -1,3 +1,4 @@
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +10,7 @@ import 'package:capital_plus/core/constants/app_colors.dart';
 
 class BuildLessonDetailCard extends StatelessWidget {
   const BuildLessonDetailCard({super.key, required this.index});
-final int index ;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +24,7 @@ final int index ;
         children: [
           IconButton(
             onPressed: () {
-             Get.back();
+              Get.back();
             },
             icon: const Icon(
               Icons.arrow_back_ios_new_rounded,
@@ -39,12 +40,14 @@ final int index ;
                   children: [
                     Text(
                       "Lesson ${index + 1}",
-                      style: AppStyles.header2,
+                      style: AppStyles.header2.copyWith(
+                        fontFamily: appFontOutfit,
+                      ),
                     ),
                     SizedBox(
                       width: 200.w,
                       child: Text(
-                      lessonsData[index].lessonTitle,
+                        lessonsData[index].lessonTitle,
                         style: AppStyles.body1Regular,
                       ),
                     ),

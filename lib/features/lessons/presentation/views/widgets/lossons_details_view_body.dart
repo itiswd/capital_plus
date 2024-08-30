@@ -1,3 +1,4 @@
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -11,15 +12,27 @@ class LessonsDetailsViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-       final int index = Get.arguments! as int;
-    return Container(
-      color: AppColor.blueAccent,
-      child: ListView(
+    final int index = Get.arguments! as int;
+    return SizedBox(
+      child: Stack(
         children: [
-          SizedBox(height: 50.h),
-        BuildLessonDetailCard(index: index),
-          SizedBox(height: 24.h),
-         LessonContent(index: index,),
+          Container(
+            height: (Get.height / 2).h,
+            color: AppColor.blueAccent,
+          ),
+          SafeArea(
+            child: ListView(
+              physics: const BouncingScrollPhysics(),
+              children: [
+                SizedBox(height: 20.h),
+                BuildLessonDetailCard(index: index),
+                SizedBox(height: 24.h),
+                LessonContent(
+                  index: index,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -28,7 +41,7 @@ class LessonsDetailsViewBody extends StatelessWidget {
 
 class LessonContent extends StatelessWidget {
   const LessonContent({super.key, required this.index});
-  final int index ;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,18 +57,24 @@ class LessonContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-             lessonsData[index].titleOne,
-            style: AppStyles.header2.copyWith(color: AppColor.blue),
+            lessonsData[index].titleOne,
+            style: AppStyles.header2.copyWith(
+              color: AppColor.blue,
+              fontFamily: appFontOutfit,
+            ),
           ),
           SizedBox(height: 12.h),
           Text(
             lessonsData[index].subtitleOne,
             style: AppStyles.body2Regular,
           ),
-           SizedBox(height: 16.h),
-             Text(
-             lessonsData[index].titleTwo,
-            style: AppStyles.header2.copyWith(color: AppColor.blue),
+          SizedBox(height: 16.h),
+          Text(
+            lessonsData[index].titleTwo,
+            style: AppStyles.header2.copyWith(
+              color: AppColor.blue,
+              fontFamily: appFontOutfit,
+            ),
           ),
           SizedBox(height: 12.h),
           Text(
