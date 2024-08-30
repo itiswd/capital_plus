@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/vocabulary/data/vocabulary_static_data.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_unlocked_element.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_locked_element.dart';
 import 'package:flutter/material.dart';
@@ -30,10 +31,10 @@ class VocabularyBody extends StatelessWidget {
               (index) {
                 return index < 20
                     ? VocabularyUnlockedElement(
-                        index: index,
+                        vocabulary: vocabularyData[index],
                       )
                     : VocabularyLockedElement(
-                        index: index,
+                        vocabulary: vocabularyData[index],
                       );
               },
             )
