@@ -1,28 +1,27 @@
-import 'package:get/get.dart';
-import 'package:hive/hive.dart';
-import 'package:svg_flutter/svg.dart';
-import 'package:flutter/services.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
+import 'package:capital_plus/features/add_investment/presentation/managers/investment_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:svg_flutter/svg.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/functions/validate_text_field.dart';
 import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_button.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/add_investment_view_app_bar.dart';
 import 'package:capital_plus/features/add_investment/presentation/views/widgets/custom_add_investment_text_field.dart';
 
-class AddInvestmentBody extends StatefulWidget {
+class AddInvestmentBody extends ConsumerStatefulWidget {
   const AddInvestmentBody({super.key});
 
   @override
-  State<AddInvestmentBody> createState() => _AddInvestmentBodyState();
+  ConsumerState<AddInvestmentBody> createState() => _AddInvestmentBodyState();
 }
 
-var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
-
-class _AddInvestmentBodyState extends State<AddInvestmentBody> {
+class _AddInvestmentBodyState extends ConsumerState<AddInvestmentBody> {
   final TextEditingController _investmentCategoryController =
       TextEditingController();
   final TextEditingController _investmentNameController =
@@ -139,26 +138,23 @@ class _AddInvestmentBodyState extends State<AddInvestmentBody> {
                 CustomButton(
                   onTap: () {
                     if (formState.currentState!.validate()) {
-                      try {
-                        investmentBox.add(
-                          InvestmentModel(
-                            investmentCategory:
-                                _investmentCategoryController.text,
-                            investmentName: _investmentNameController.text,
-                            investmentDate: _investmentDateController.text,
-                            investmentAmount: _amountController.text,
-                            description: _descriptionController.text,
-                            interest: _interestController.text,
-                            riskRating: _riskRatingController.text,
-                            expectedReturn: _expectedReturnController.text,
-                          ),
-                        );
-                        debugPrint('success');
-                        Get.back();
-                        setState(() {});
-                      } catch (e) {
-                        // Handle the error
-                      }
+                      final investment = InvestmentModel(
+                        investmentCategory: _investmentCategoryController.text,
+                        investmentName: _investmentNameController.text,
+                        investmentDate: _investmentDateController.text,
+                        investmentAmount: _amountController.text,
+                        description: _descriptionController.text,
+                        interest: _interestController.text,
+                        riskRating: _riskRatingController.text,
+                        expectedReturn: _expectedReturnController.text,
+                      );
+
+                      // Add investment using Riverpod
+                      ref
+                          .read(investmentListProvider.notifier)
+                          .addInvestment(investment);
+
+                      Get.back();
                     }
                   },
                 ),

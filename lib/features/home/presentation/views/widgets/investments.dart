@@ -1,28 +1,22 @@
-import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
+import 'package:capital_plus/features/add_investment/presentation/managers/investment_provider.dart';
+import 'package:capital_plus/features/home/presentation/manager/investments_open_notifier.dart';
 import 'package:capital_plus/features/home/presentation/views/widgets/investments_item.dart';
-import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add Riverpod
 
-class Investments extends StatefulWidget {
+class Investments extends ConsumerWidget {
   const Investments({
     super.key,
   });
 
   @override
-  State<Investments> createState() => _InvestmentsState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final investments =
+        ref.watch(investmentListProvider); // Watch investment list provider
 
-class _InvestmentsState extends State<Investments> {
-  List<bool>? isOpen;
-  Box<InvestmentModel> investmentBox =
-      Hive.box<InvestmentModel>(kInvestmentHiveBox);
-  late List investData = investmentBox.values.toList();
-  @override
-  Widget build(BuildContext context) {
-    return investData.isEmpty
+    return investments.isEmpty
         ? Text(
             'You don\'t have any investments added yet.',
             textAlign: TextAlign.center,
@@ -33,18 +27,16 @@ class _InvestmentsState extends State<Investments> {
         : Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: List.generate(
-              investData.length,
+              investments.length,
               (index) {
-                isOpen ??= List.generate(investData.length, (index) => false);
                 return InvestmentsItem(
-                  investment: investData[index],
-                  isOpen: isOpen![index],
+                  investment: investments[index],
+                  isOpen: ref.read(investmentOpenProvider(
+                      index)), // Use another provider to manage open state
                   onTap: () {
-                    setState(
-                      () {
-                        isOpen![index] = !isOpen![index];
-                      },
-                    );
+                    ref
+                        .read(investmentOpenProvider(index).notifier)
+                        .toggle(); // Toggle the open state
                   },
                 );
               },
