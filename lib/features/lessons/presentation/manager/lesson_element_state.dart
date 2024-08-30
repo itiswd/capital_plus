@@ -1,11 +1,14 @@
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_consts.dart';
 import '../../../../core/service/hive_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
 import 'package:capital_plus/features/lessons/presentation/manager/lessons_progress_details_notifier.dart';
+
 
 class LessonElementState extends StateNotifier<bool> {
   LessonElementState(this.ref) : super(false) {
@@ -15,7 +18,16 @@ class LessonElementState extends StateNotifier<bool> {
   final Ref ref;
  
 
+  void navigation(int index) {
+    if(isLocked(index)){
 
+    }else{
+         
+      updateBoolInList(index);
+        Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
+       
+    }
+  }
 
   Future<void> initializeCheckedList() async {
 
@@ -26,7 +38,7 @@ class LessonElementState extends StateNotifier<bool> {
         print("checkedList: $checkedList");
   }
 
-  Future<void> updateBoolInList(int index,{bool value =true}) async {
+  Future<void> updateBoolInList(int index) async {
     // Step 1: Open the box
     Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
 
@@ -36,7 +48,7 @@ class LessonElementState extends StateNotifier<bool> {
 
     // Step 3: Update the value at the specified index
     if (index >= 0 && index < boolList.length) {
-      boolList[index] = value;
+      boolList[index] = true;
 
       // Step 4: Save the updated list back to the box
       await box.put(klistofCheckBox, boolList);

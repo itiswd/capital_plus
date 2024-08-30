@@ -22,10 +22,8 @@ class LessonElement extends ConsumerWidget {
     ref.watch(lessonElementProvider(index));
 
     return GestureDetector(
-      onTap: ()async {
-      await   lessonElementState.updateBoolInList(index);
-        Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
-       
+      onTap: () {
+     lessonElementState.navigation(index);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16.0),
@@ -92,24 +90,19 @@ class LessonElement extends ConsumerWidget {
         color: AppColor.grey,
       );
     } else {
-      return GestureDetector(
-        onTap: () {
-          lessonElementState.updateBoolInList(index, value: !checkedList[index]);
-        },
-        child: checkedList[index]
-            ? SvgPicture.asset(Assets.iconsCheckBox)
-            : Container(
-                width: 24.w,
-                height: 24.w,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: AppColor.blue,
-                    width: 1.0,
-                  ),
+      return checkedList[index]
+          ? SvgPicture.asset(Assets.iconsCheckBox)
+          : Container(
+              width: 24.w,
+              height: 24.w,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: AppColor.blue,
+                  width: 1.0,
                 ),
               ),
-      );
+            );
     }
   }
 }
