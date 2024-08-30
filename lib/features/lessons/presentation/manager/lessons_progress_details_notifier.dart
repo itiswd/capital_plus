@@ -1,27 +1,27 @@
+import 'package:hive/hive.dart';
 import '../../../../core/constants/app_consts.dart';
+import '../../../../core/service/hive_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:capital_plus/core/service/shared_preferences_singleton.dart';
+
+
+
 
 class CounterNotifier extends StateNotifier<int> {
-  CounterNotifier() : super(0) {
-    _init();
-  }
+  CounterNotifier() : super(0) {}
 
-  void _init() {
-   
-    
+ 
+  void updateCounter( ) async{
+    state =trueCount;
   
-    state = countTrueValues();
   }
+Future<void> getCheckBoxValues()  async{
+final Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
+   checkedList = box.get(klistofCheckBox,
+        defaultValue: List<bool>.filled(lessonsList.length, false))!;
+          trueCount = checkedList.where((value) => value).length;
+updateCounter();
 
-  void updateCounter( ) {
-    state = countTrueValues();
-  
-    
-  }
-    int countTrueValues() {
-    return SharedPref.getBoolList(klistofCheckBox).where((element) => element).length;
-  }
+}
 }
 final counterProvider = StateNotifierProvider<CounterNotifier, int>(
   (ref) => CounterNotifier(),

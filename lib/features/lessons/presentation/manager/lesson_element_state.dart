@@ -1,48 +1,54 @@
+import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_consts.dart';
+import '../../../../core/service/hive_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
 import 'package:capital_plus/features/lessons/presentation/manager/lessons_progress_details_notifier.dart';
 
 class LessonElementState extends StateNotifier<bool> {
   LessonElementState(this.ref) : super(false) {
-    _init();
+  
   }
   int x = 0;
   final Ref ref;
-  late List<bool> checkedList;
+ 
 
-  static const List<String> lessonsList = [
-    "Portfolio Diversification",
-    "Financial Literacy",
-    "Financial Independence",
-    "Risk Management",
-    "Market Analysis",
-    "Passive and Active\nInvesting",
-    "Taxes and Investment",
-    "Selecting Assets",
-    "The Importance\nof Liquidity",
-    "Behavioral Economics\nand Investment"
-  ];
 
-  void _init() {
-    checkedList =
-        SharedPref.getBoolList(klistofCheckBox, length: lessonsList.length);
-    // print("initial checkedList: $checkedList");
+
+  Future<void> initializeCheckedList() async {
+
+    Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
+    checkedList = box.get(klistofCheckBox,
+        defaultValue: List<bool>.filled(lessonsList.length, false))!;
+         ref.read(counterProvider.notifier).getCheckBoxValues() ;
+        print("checkedList: $checkedList");
   }
 
-  void toggleChecked(int index) {
-    // print(checkedList);
-    checkedList[index] = !checkedList[index];
+  Future<void> updateBoolInList(int index,{bool value =true}) async {
+    // Step 1: Open the box
+    Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
 
-    // print(checkedList);
-    // print("******************************");
-    SharedPref.setBoolList(klistofCheckBox, checkedList);
+    // Step 2: Retrieve the list from the box
+    List<bool> boolList = box.get(klistofCheckBox,
+        defaultValue: List<bool>.filled(lessonsList.length, false))!;
 
-    ref.read(counterProvider.notifier).updateCounter();
-    state = !state; // Trigger a rebuild
+    // Step 3: Update the value at the specified index
+    if (index >= 0 && index < boolList.length) {
+      boolList[index] = value;
+
+      // Step 4: Save the updated list back to the box
+      await box.put(klistofCheckBox, boolList);
+       ref.read(counterProvider.notifier).getCheckBoxValues() ;
+        state = boolList[index];
+      print("checkedList OF   updateBoolInList: $checkedList");
+    } else {
+      print('Index out of bounds');
+    }
   }
+
+
 
   String getLesson(int index) => lessonsList[index];
 

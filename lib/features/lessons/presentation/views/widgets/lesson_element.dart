@@ -1,4 +1,3 @@
-import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,7 +7,10 @@ import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
+
+
 
 class LessonElement extends ConsumerWidget {
   const LessonElement({super.key, required this.index});
@@ -20,8 +22,10 @@ class LessonElement extends ConsumerWidget {
     ref.watch(lessonElementProvider(index));
 
     return GestureDetector(
-      onTap: () {
+      onTap: ()async {
+      await   lessonElementState.updateBoolInList(index);
         Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
+       
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 16.0),
@@ -89,8 +93,10 @@ class LessonElement extends ConsumerWidget {
       );
     } else {
       return GestureDetector(
-        onTap: () => lessonElementState.toggleChecked(index),
-        child: lessonElementState.checkedList[index]
+        onTap: () {
+          lessonElementState.updateBoolInList(index, value: !checkedList[index]);
+        },
+        child: checkedList[index]
             ? SvgPicture.asset(Assets.iconsCheckBox)
             : Container(
                 width: 24.w,

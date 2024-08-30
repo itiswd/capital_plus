@@ -6,6 +6,8 @@ const String kIsPrimium = 'isPrimium';
 const String klistofCheckBox = 'listofCheckBox';
 const double kHorizontalPadding = 16.0;
 const String kInvestmentHiveBox = 'kInvestmentBox';
+List<bool> checkedList=[];
+int trueCount = 0;
 DateFormat dateFormat = DateFormat('dd-MM-yyyy');
 String appFontMontserrat = 'Montserrat';
 String appFontOutfit = 'Outfit';
@@ -18,7 +20,18 @@ Map<String, double> chartValues = {
   'Sa': 66,
   'Su': 44,
 };
-
+ const List<String> lessonsList = [
+    "Portfolio Diversification",
+    "Financial Literacy",
+    "Financial Independence",
+    "Risk Management",
+    "Market Analysis",
+    "Passive and Active\nInvesting",
+    "Taxes and Investment",
+    "Selecting Assets",
+    "The Importance\nof Liquidity",
+    "Behavioral Economics\nand Investment"
+  ];
 final Map<String, String> investmentsIcons = {
   'Crypto Investment': Assets.iconsInvestmentCryptoIcon,
   'Cash Investment': Assets.iconsInvestmentCashIcon,
