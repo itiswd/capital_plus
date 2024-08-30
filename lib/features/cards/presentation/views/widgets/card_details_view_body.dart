@@ -42,32 +42,30 @@ class CustomCardDetailsViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              GestureDetector(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: SvgPicture.asset(Assets.arrowLeft)),
-              SizedBox(width: 12.w),
-              SizedBox(
-                width: 200.w,
-                child: Text(
-                  appBarTitle,
-                  style: AppStyles.header2.copyWith(
-                    color: AppColor.white,
-                    fontFamily: appFontOutfit,
-                  ),
-                ),
+          GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: SvgPicture.asset(
+              Assets.arrowLeft,
+            ),
+          ),
+          SizedBox(width: 12.w),
+          SizedBox(
+            width: 200.w,
+            child: Text(
+              appBarTitle,
+              style: AppStyles.header2.copyWith(
+                color: AppColor.white,
+                fontFamily: appFontOutfit,
               ),
-              SvgPicture.asset(Assets.iconsSearch)
-            ],
-          )
+            ),
+          ),
+          const Spacer(),
+          SvgPicture.asset(Assets.iconsSearch)
         ],
       ),
     );
