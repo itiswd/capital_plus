@@ -1,11 +1,13 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/cards/data/static/company_data_static.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/custom_year_return.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TrailingCard extends StatelessWidget {
-  const TrailingCard({super.key});
+  const TrailingCard({super.key, required this.cardIndex});
+  final int cardIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -19,28 +21,58 @@ class TrailingCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydv jnjcbhucb jcbdhb jdbhdv jduyd jdydvv',
+            companyData[cardIndex].trailingModel.subtitle,
             style: AppStyles.body2Regular.copyWith(
               color: AppColor.lightGrey,
             ),
           ),
           SizedBox(height: 12.h),
-          const CustomYearReturn(
+          CustomYearReturn(
             yearName: '1-Year Return',
-            msft: '+29.17%',
-            sp500: '+29.17%',
+            nameofCompany:
+                companyData[cardIndex].trailingModel.yearReturn1.nameofCompany,
+            msft: companyData[cardIndex]
+                .trailingModel
+                .yearReturn1
+                .rateofCompany
+                .toString(),
+            sp500: companyData[cardIndex]
+                .trailingModel
+                .yearReturn1
+                .rateofS$P500
+                .toString(),
           ),
           SizedBox(height: 12.h),
-          const CustomYearReturn(
-            yearName: '1-Year Return',
-            msft: '+29.17%',
-            sp500: '+29.17%',
+          CustomYearReturn(
+            yearName: '3-Year Return',
+            nameofCompany:
+                companyData[cardIndex].trailingModel.yearReturn3.nameofCompany,
+            msft: companyData[cardIndex]
+                .trailingModel
+                .yearReturn3
+                .rateofCompany
+                .toString(),
+            sp500: companyData[cardIndex]
+                .trailingModel
+                .yearReturn3
+                .rateofS$P500
+                .toString(),
           ),
           SizedBox(height: 12.h),
-          const CustomYearReturn(
-            yearName: '1-Year Return',
-            msft: '+29.17%',
-            sp500: '+29.17%',
+          CustomYearReturn(
+            yearName: '5-Year Return',
+            nameofCompany:
+                companyData[cardIndex].trailingModel.yearReturn5.nameofCompany,
+            msft: companyData[cardIndex]
+                .trailingModel
+                .yearReturn5
+                .rateofCompany
+                .toString(),
+            sp500: companyData[cardIndex]
+                .trailingModel
+                .yearReturn5
+                .rateofS$P500
+                .toString(),
           ),
         ],
       ),

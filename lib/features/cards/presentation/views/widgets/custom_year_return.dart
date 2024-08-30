@@ -9,8 +9,10 @@ class CustomYearReturn extends StatelessWidget {
       {super.key,
       required this.yearName,
       required this.msft,
-      required this.sp500});
+      required this.sp500,
+      required this.nameofCompany});
   final String yearName;
+  final String nameofCompany;
   final String msft;
   final String sp500;
 
@@ -34,7 +36,7 @@ class CustomYearReturn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'MSFT',
+                  nameofCompany,
                   style: AppStyles.body1Regular.copyWith(
                     color: AppColor.lightGrey,
                   ),

@@ -35,44 +35,50 @@ class CustomCompanyInformation extends StatelessWidget {
           SizedBox(height: 12.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Full Time Employees',
-                    style: AppStyles.body2Regular.copyWith(
-                      color: AppColor.darkGrey,
+              Expanded(
+                flex: 2,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Full Time Employees',
+                      style: AppStyles.body2Regular.copyWith(
+                        color: AppColor.darkGrey,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    companyData[cardIndex]
-                        .companyInformationModel
-                        .fullTimeEmployees,
-                    style: AppStyles.body1Medium.copyWith(
-                      color: AppColor.blue,
+                    SizedBox(height: 4.h),
+                    Text(
+                      companyData[cardIndex]
+                          .companyInformationModel
+                          .fullTimeEmployees,
+                      style: AppStyles.body1Medium.copyWith(
+                        color: AppColor.blue,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Sector',
-                    style: AppStyles.body2Regular.copyWith(
-                      color: AppColor.darkGrey,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Sector',
+                      style: AppStyles.body2Regular.copyWith(
+                        color: AppColor.darkGrey,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    companyData[cardIndex].companyInformationModel.sector,
-                    style: AppStyles.body1Medium.copyWith(
-                      color: AppColor.blue,
+                    SizedBox(height: 4.h),
+                    Text(
+                      companyData[cardIndex].companyInformationModel.sector,
+                      style: AppStyles.body1Medium.copyWith(
+                        color: AppColor.blue,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               )
             ],
           )

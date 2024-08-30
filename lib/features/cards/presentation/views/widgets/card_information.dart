@@ -27,11 +27,17 @@ class CardInformation extends StatelessWidget {
             cardIndex: cardIndex,
           ),
           SizedBox(height: 70.h),
-          const CustomInformationCard(),
+          CustomInformationCard(
+            cardIndex: cardIndex,
+          ),
           SizedBox(height: 70.h),
-          const InterestingFact(),
+          InterestingFact(
+            cardIndex: cardIndex,
+          ),
           SizedBox(height: 70.h),
-          const TrailingCard(),
+          TrailingCard(
+            cardIndex: cardIndex,
+          ),
         ],
       ),
     );

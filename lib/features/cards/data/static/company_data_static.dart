@@ -18,9 +18,9 @@ List<CompanyDataModel> companyData = [
         subtitle:
             "Trailing total returns as of 8/23/2024, which may include dividends or other distributions. Benchmark is S&P 500.",
         yearReturn1: YearReturn(
-            nameofCompany: "AAPL", rateofCompany: 26.58, rateofS$P500: 27.58),
+            nameofCompany: "AAPL", rateofCompany: 26.61, rateofS$P500: 27.58),
         yearReturn3: YearReturn(
-            nameofCompany: "AAPL", rateofCompany: 57.19, rateofS$P500: 25.01),
+            nameofCompany: "AAPL", rateofCompany: 54.19, rateofS$P500: 25.01),
         yearReturn5: YearReturn(
             nameofCompany: "AAPL", rateofCompany: 385.97, rateofS$P500: 97.42),
       )),
@@ -87,4 +87,180 @@ List<CompanyDataModel> companyData = [
         yearReturn5: YearReturn(
             nameofCompany: "MSFT", rateofCompany: 225.00, rateofS$P500: 97.47),
       )),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Tesla, Inc. is an American electric vehicle and clean energy company. Tesla designs and manufactures electric vehicles, battery energy storage from home to grid-scale, solar panels, and solar roof tiles. The company's mission is to accelerate the world's transition to sustainable energy. Tesla's headquarters are located in Austin, Texas.",
+      fullTimeEmployees: "140,473",
+      sector: "Consumer Cyclical",
+    ),
+    companyHistory:
+        "Founded in 2003 by engineers Martin Eberhard and Marc Tarpenning, Tesla’s journey took a significant turn when Elon Musk joined the company in 2004 as chairman of the board. Tesla's first electric vehicle, the Roadster, was launched in 2008. Since then, Tesla has revolutionized the auto industry with its electric cars like the Model S, Model 3, Model X, and Model Y, becoming a leader in the electric vehicle market.",
+    interstingFacts:
+        "In 2020, Tesla became the world's most valuable carmaker, surpassing traditional automotive giants like Toyota and Volkswagen. This achievement highlighted the growing importance of electric vehicles and Tesla's dominant position in the market.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500 .",
+      yearReturn1: YearReturn(
+          nameofCompany: "TSLA", rateofCompany: -10.55, rateofS$P500: 27.23),
+      yearReturn3: YearReturn(
+          nameofCompany: "TSLA", rateofCompany: -9.97, rateofS$P500: 24.97),
+      yearReturn5: YearReturn(
+          nameofCompany: "TSLA", rateofCompany: 1414.40, rateofS$P500: 97.35),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Meta Platforms, Inc., formerly known as Facebook, Inc., is an American multinational technology conglomerate. Meta owns and operates Facebook, Instagram, WhatsApp, and Oculus, among other products and services. The company is a leading player in social networking and virtual reality technology, aiming to build the next evolution of social connection through the metaverse.",
+      fullTimeEmployees: "70,799",
+      sector: "Communication Services",
+    ),
+    companyHistory:
+        "Facebook was founded in 2004 by Mark Zuckerberg, along with his college roommates, in his Harvard dorm room. Originally launched as a social networking site for students, Facebook quickly expanded globally. The company went public in 2012, and in 2021, it rebranded as Meta to emphasize its focus on the metaverse, a virtual world where people can interact in 3D spaces.",
+    interstingFacts:
+        "As of 2023, Facebook remains the largest social media platform in the world, with nearly 3 billion monthly active users. This vast user base has made Meta a central player in the digital advertising industry, generating billions in revenue from ad sales.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500 .",
+      yearReturn1: YearReturn(
+          nameofCompany: "META", rateofCompany: 82.80, rateofS$P500: 27.49),
+      yearReturn3: YearReturn(
+          nameofCompany: "META", rateofCompany: 41.67, rateofS$P500: 24.93),
+      yearReturn5: YearReturn(
+          nameofCompany: "META", rateofCompany: 193.62, rateofS$P500: 97.29),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Alibaba Group is a Chinese multinational conglomerate specializing in e-commerce, retail, internet, and technology. It operates a wide range of businesses, including online marketplaces like Taobao and Tmall, cloud computing through Alibaba Cloud, digital payments via Alipay, and logistics with Cainiao. Headquartered in Hangzhou, China, Alibaba is one of the world's largest e-commerce companies.",
+      fullTimeEmployees: "198,162",
+      sector: "Consumer Cyclical",
+    ),
+    companyHistory:
+        "Alibaba was founded in 1999 by Jack Ma and 17 other co-founders as a B2B marketplace for connecting Chinese manufacturers with overseas buyers. The company's rapid growth led to the expansion into various sectors, including retail and technology. In 2014, Alibaba conducted the largest IPO in history, raising \$25 billion on the New York Stock Exchange.",
+    interstingFacts:
+        "Alibaba’s annual Singles' Day event, held on November 11th, is the world's biggest online shopping festival. In 2022, the event generated over \$84.5 billion in sales, surpassing Black Friday and Cyber Monday combined.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is HANG SENG INDEX",
+      yearReturn1: YearReturn(
+          nameofCompany: "BABA", rateofCompany: -6.09, rateofS$P500: -1.77),
+      yearReturn3: YearReturn(
+          nameofCompany: "BABA", rateofCompany: -50.12, rateofS$P500: -30.73),
+      yearReturn5: YearReturn(
+          nameofCompany: "BABA", rateofCompany: -48.73, rateofS$P500: -32.01),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Visa Inc. is an American multinational financial services corporation that facilitates electronic funds transfers through its global network of credit and debit cards. Visa is one of the largest payment processors in the world, enabling secure transactions across various platforms. The company is headquartered in Foster City, California.",
+      fullTimeEmployees: "--",
+      sector: "Financial Services",
+    ),
+    companyHistory:
+        "Visa was originally founded in 1958 as the BankAmericard credit card program by Bank of America. It was rebranded as Visa in 1976 and quickly expanded globally. Over the years, Visa has grown into a dominant player in the financial services industry, processing billions of transactions annually.",
+    interstingFacts:
+        "Visa’s network, known as VisaNet, can handle over 65,000 transaction messages per second. The company's focus on innovation has made it a leader in digital payments, including contactless and mobile payment technologies.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500 ",
+      yearReturn1: YearReturn(
+          nameofCompany: "V", rateofCompany: 11.74, rateofS$P500: 27.56),
+      yearReturn3: YearReturn(
+          nameofCompany: "V", rateofCompany: 18.30, rateofS$P500: 24.99),
+      yearReturn5: YearReturn(
+          nameofCompany: "V", rateofCompany: 85.95, rateofS$P500: 97.39),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Berkshire Hathaway is an American multinational conglomerate holding company, led by renowned investor Warren Buffett. The company owns a diverse range of businesses, including GEICO insurance, BNSF Railway, Dairy Queen, and Duracell. Berkshire Hathaway is also a major investor in companies like Apple, Coca-Cola, and American Express. The company is headquartered in Omaha, Nebraska.",
+      fullTimeEmployees: "396,500",
+      sector: "Financial Services",
+    ),
+    companyHistory:
+        "Originally a textile manufacturing company, Berkshire Hathaway was transformed into an investment vehicle after Warren Buffett took control in the 1960s. Under Buffett’s leadership, the company grew into one of the largest and most respected holding companies in the world, with a market capitalization exceeding \$600 billion.",
+    interstingFacts:
+        "Warren Buffett, often referred to as the \"Oracle of Omaha,\" has pledged to donate over 99% of his wealth to philanthropic causes. Through his leadership, Berkshire Hathaway's stock has delivered an average annual return of over 20% for more than five decades.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500 ",
+      yearReturn1: YearReturn(
+          nameofCompany: "BRK-B", rateofCompany: 27.94, rateofS$P500: 27.46),
+      yearReturn3: YearReturn(
+          nameofCompany: "BRK-B", rateofCompany: 58.50, rateofS$P500: 24.89),
+      yearReturn5: YearReturn(
+          nameofCompany: "BRK-B", rateofCompany: 130.96, rateofS$P500: 97.24),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "JP Morgan Chase & Co. is an American multinational investment bank and financial services company. It is one of the largest banks in the world, providing services in investment banking, asset management, private banking, and commercial banking. The company is headquartered in New York City and operates in over 100 countries.",
+      fullTimeEmployees: "313,206",
+      sector: "Financial Services",
+    ),
+    companyHistory:
+        "JP Morgan Chase was formed through the merger of several large banking institutions, including J.P. Morgan & Co., Chase Manhattan Bank, and Bank One. The company's history dates back to the 19th century, with J.P. Morgan playing a key role in financing the industrialization of America. Today, JP Morgan Chase is a leader in global finance, with assets exceeding \$3 trillion.",
+    interstingFacts:
+        "JP Morgan Chase is the largest bank in the United States by assets. The company played a significant role during the financial crisis of 2008, acquiring Bear Stearns and Washington Mutual, which helped stabilize the banking system.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500.",
+      yearReturn1: YearReturn(
+          nameofCompany: "JPM", rateofCompany: 52.36, rateofS$P500: 27.41),
+      yearReturn3: YearReturn(
+          nameofCompany: "JPM", rateofCompany: 47.71, rateofS$P500: 24.84),
+      yearReturn5: YearReturn(
+          nameofCompany: "JPM", rateofCompany: 138.64, rateofS$P500: 97.15),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Johnson & Johnson is an American multinational corporation that develops medical devices, pharmaceuticals, and consumer packaged goods. The company is best known for its healthcare products, including Band-Aid, Tylenol, Johnson’s Baby, and Neutrogena. Johnson & Johnson is headquartered in New Brunswick, New Jersey.",
+      fullTimeEmployees: "131,900",
+      sector: "Healthcare",
+    ),
+    companyHistory:
+        "Founded in 1886 by Robert Wood Johnson and his brothers, Johnson & Johnson began as a manufacturer of sterile surgical supplies. Over the decades, the company expanded into pharmaceuticals and consumer health products, becoming a global leader in healthcare. Johnson & Johnson played a pivotal role in developing the COVID-19 vaccine during the pandemic.",
+    interstingFacts:
+        "Johnson & Johnson has been listed in the Fortune 500 for over 30 years and is one of the most valuable healthcare companies in the world. The company has also been recognized for its corporate social responsibility, particularly in the areas of sustainability and global health.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500",
+      yearReturn1: YearReturn(
+          nameofCompany: "JNJ", rateofCompany: 1.41, rateofS$P500: 27.32),
+      yearReturn3: YearReturn(
+          nameofCompany: "JNJ", rateofCompany: 2.17, rateofS$P500: 24.76),
+      yearReturn5: YearReturn(
+          nameofCompany: "JNJ", rateofCompany: 47.92, rateofS$P500: 97.03),
+    ),
+  ),
+  CompanyDataModel(
+    companyInformationModel: CompanyInformationModel(
+      subtitle:
+          "Procter & Gamble (P&G) is an American multinational consumer goods corporation that produces a wide range of products, including beauty, grooming, health care, fabric and home care, and baby and feminine care. The company’s well-known brands include Tide, Pampers, Gillette, and Crest. P&G is headquartered in Cincinnati, Ohio.",
+      fullTimeEmployees: "108,000",
+      sector: "Consumer Defensive",
+    ),
+    companyHistory:
+        "Founded in 1837 by William Procter and James Gamble, P&G began as a soap and candle company. Over the years, it expanded into various consumer goods sectors, becoming a global leader in household products. P&G has a strong focus on innovation and sustainability, consistently ranking as one of the world's most admired companies.",
+    interstingFacts:
+        "P&G's brand portfolio includes 20 brands that each generate over \$1 billion in annual sales. The company has also been a pioneer in marketing, being one of the first to create and sponsor soap operas on radio and television, hence the term “soap opera.",
+    trailingModel: TrailingModel(
+      subtitle:
+          "Trailing total returns as of 8/26/2024, which may include dividends or other distributions. Benchmark is S&P 500 .",
+      yearReturn1: YearReturn(
+          nameofCompany: "PG", rateofCompany: 13.66, rateofS$P500: 27.37),
+      yearReturn3: YearReturn(
+          nameofCompany: "PG", rateofCompany: 28.52, rateofS$P500: 24.18),
+      yearReturn5: YearReturn(
+          nameofCompany: "PG", rateofCompany: 64.21, rateofS$P500: 97.10),
+    ),
+  ),
 ];
