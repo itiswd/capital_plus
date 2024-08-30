@@ -12,13 +12,16 @@ class CustomCardItemsList extends StatelessWidget {
       itemCount: cardsData.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: .95,
-        crossAxisSpacing: 16.w,
+        // crossAxisSpacing: 16.w,
         mainAxisSpacing: 36.h,
+        childAspectRatio: 0.9,
       ),
       itemBuilder: (context, index) {
-        return CustomCardItem(
-          card: cardsData[index],
+        return Padding(
+          padding: EdgeInsets.only(right: 10.w, left: 10.w),
+          child: CustomCardItem(
+            card: cardsData[index],
+          ),
         );
       },
     );
