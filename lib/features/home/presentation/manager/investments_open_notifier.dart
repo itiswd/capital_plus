@@ -9,6 +9,8 @@ class InvestmentOpenNotifier extends StateNotifier<bool> {
 }
 
 // Provider to manage the open/close state for each investment item
-final investmentOpenProvider = StateNotifierProvider.family<InvestmentOpenNotifier, bool, int>((ref, index) {
+final investmentOpenProvider =
+    StateNotifierProvider.family<InvestmentOpenNotifier, bool, int>(
+        (ref, index) {
   return InvestmentOpenNotifier();
 });

@@ -4,7 +4,7 @@ import 'package:capital_plus/features/home/presentation/views/widgets/investment
 import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'; // Add Riverpod
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Investments extends ConsumerWidget {
   const Investments({
@@ -29,14 +29,15 @@ class Investments extends ConsumerWidget {
             children: List.generate(
               investments.length,
               (index) {
+                // Watch the open state for this specific investment item
+                final isOpen = ref.watch(investmentOpenProvider(index));
+
                 return InvestmentsItem(
                   investment: investments[index],
-                  isOpen: ref.read(investmentOpenProvider(
-                      index)), // Use another provider to manage open state
+                  isOpen: isOpen, // Pass the current open state
                   onTap: () {
-                    ref
-                        .read(investmentOpenProvider(index).notifier)
-                        .toggle(); // Toggle the open state
+                    // Toggle the open state when the item is tapped
+                    ref.read(investmentOpenProvider(index).notifier).toggle();
                   },
                 );
               },
