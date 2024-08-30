@@ -7,10 +7,10 @@ class CardDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final card = Get.arguments;
+    final int cardIndex = Get.arguments;
     return Scaffold(
       body: CardDetailsViewBody(
-        card: card,
+        cardIndex: cardIndex,
       ),
     );
   }

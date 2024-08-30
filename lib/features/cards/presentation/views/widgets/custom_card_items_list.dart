@@ -23,8 +23,7 @@ class CustomCardItemsList extends StatelessWidget {
           padding: EdgeInsets.only(right: 10.w, left: 10.w),
           child: GestureDetector(
             onTap: () {
-              Get.toNamed(AppRouter.kCardDetailsView,
-                  arguments: cardsData[index]);
+              Get.toNamed(AppRouter.kCardDetailsView, arguments: index);
             },
             child: CustomCardItem(
               card: cardsData[index],
