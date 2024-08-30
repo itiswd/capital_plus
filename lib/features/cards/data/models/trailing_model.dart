@@ -1,10 +1,10 @@
 class TrailingModel {
   final String subtitle;
   final YearReturn yearReturn1;
-  final YearReturn yearReturn2;
   final YearReturn yearReturn3;
+  final YearReturn yearReturn5;
 
-  TrailingModel({required this.subtitle, required this.yearReturn1, required this.yearReturn2, required this.yearReturn3});
+  TrailingModel({required this.subtitle, required this.yearReturn1, required this.yearReturn3, required this.yearReturn5});
 }
 
 class YearReturn{
