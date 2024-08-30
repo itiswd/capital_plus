@@ -1,14 +1,14 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/vocabulary/model/vocabulary_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class VocabularyUnlockedElement extends StatelessWidget {
-  final int index;
+  final VocabularyModel vocabulary;
   const VocabularyUnlockedElement({
     super.key,
-    required this.index,
+    required this.vocabulary,
   });
 
   @override
@@ -27,7 +27,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  vocabulary['title']![index],
+                  vocabulary.title,
                   style: AppStyles.header2.copyWith(
                     fontFamily: 'Outfit',
                     fontWeight: FontWeight.w700,
@@ -49,7 +49,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      vocabulary['code']![index],
+                      vocabulary.code,
                       textAlign: TextAlign.right,
                       style: AppStyles.body2Regular.copyWith(
                         fontFamily: '',
@@ -61,7 +61,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
             ),
             SizedBox(height: 12.0.h),
             Text(
-              vocabulary['desc']![index],
+              vocabulary.desc,
               style: AppStyles.body2Regular,
             ),
           ],

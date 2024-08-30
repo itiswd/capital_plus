@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/vocabulary/data/vocabulary_static_data.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_unlocked_element.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_locked_element.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class VocabularyBody extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,
           children: [
             SizedBox(height: 20.0.h),
@@ -30,10 +32,10 @@ class VocabularyBody extends StatelessWidget {
               (index) {
                 return index < 20
                     ? VocabularyUnlockedElement(
-                        index: index,
+                        vocabulary: vocabularyData[index],
                       )
                     : VocabularyLockedElement(
-                        index: index,
+                        vocabulary: vocabularyData[index],
                       );
               },
             )

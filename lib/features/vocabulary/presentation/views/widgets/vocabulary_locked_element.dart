@@ -1,17 +1,17 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/core/widgets/main_custom_button.dart';
+import 'package:capital_plus/features/vocabulary/model/vocabulary_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class VocabularyLockedElement extends StatelessWidget {
-  final int index;
+  final VocabularyModel vocabulary;
   const VocabularyLockedElement({
     super.key,
-    required this.index,
+    required this.vocabulary,
   });
 
   @override
@@ -30,13 +30,12 @@ class VocabularyLockedElement extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  vocabulary['title']![index] ==
-                          'P/E Ratio\n(Price-to-\nEarnings Ratio)'
+                  vocabulary.title == 'P/E Ratio\n(Price-to-\nEarnings Ratio)'
                       ? 'P/E Ratio (Price-\nto-Earnings Ratio)'
-                      : vocabulary['title']![index] ==
+                      : vocabulary.title ==
                               'Advance Taxes\n(Capital\nGains Tax)'
                           ? 'Advance Taxes\n(Capital Gains Tax)'
-                          : vocabulary['title']![index],
+                          : vocabulary.title,
                   style: AppStyles.header2.copyWith(
                     fontSize: 19.0.sp,
                     color: AppColor.darkGrey,

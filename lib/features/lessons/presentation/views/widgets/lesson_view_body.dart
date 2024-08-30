@@ -11,27 +11,31 @@ class LessonsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: ListView(
-      padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-      children: [
-        SizedBox(height: 20.0.h),
-        Text('Lessons', textAlign: TextAlign.center, style: AppStyles.header1),
-        SizedBox(height: 24.0.h),
-       const LessonsProgressDetails(),
-        SizedBox(height: 24.0.h),
-        ...List.generate(
-          10,
-          (index) {
-            return LessonElement(
-              index: index,
-            );
-          },
-        ),
-        SizedBox(height: 100.0.h),
-      ],
-    ));
+      child: ListView(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        children: [
+          SizedBox(height: 20.0.h),
+          Text(
+            'Lessons',
+            textAlign: TextAlign.center,
+            style: AppStyles.header1.copyWith(
+              fontFamily: appFontOutfit,
+            ),
+          ),
+          SizedBox(height: 24.0.h),
+          const LessonsProgressDetails(),
+          SizedBox(height: 24.0.h),
+          ...List.generate(
+            10,
+            (index) {
+              return LessonElement(
+                index: index,
+              );
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
-
-
-

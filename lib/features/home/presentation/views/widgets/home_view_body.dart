@@ -9,22 +9,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:hive/hive.dart';
 
-class HomeBody extends StatefulWidget {
+class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
 
   @override
-  State<HomeBody> createState() => _HomeBodyState();
-}
-
-class _HomeBodyState extends State<HomeBody> {
-  var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
-  int getTotalInvestmentAmount() {
-    return investmentBox.values.toList().fold(
-        0, (sum, investment) => sum + int.parse(investment.investmentAmount));
-  }
-
-  @override
   Widget build(BuildContext context) {
+    var investmentBox = Hive.box<InvestmentModel>(kInvestmentHiveBox);
+    int getTotalInvestmentAmount() {
+      return investmentBox.values.toList().fold(
+          0, (sum, investment) => sum + int.parse(investment.investmentAmount));
+    }
+
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),

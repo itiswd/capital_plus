@@ -22,6 +22,10 @@ class Assets {
   /// assets/icons/button_open.svg
   static const String iconsButtonOpen = "assets/icons/button_open.svg";
 
+  /// Assets for iconsCheckBox
+  /// assets/icons/checkBox.svg
+  static const String iconsCheckBox = "assets/icons/checkBox.svg";
+
   /// Assets for iconsFlowbite0
   /// assets/icons/flowbite_0.svg
   static const String iconsFlowbite0 = "assets/icons/flowbite_0.svg";

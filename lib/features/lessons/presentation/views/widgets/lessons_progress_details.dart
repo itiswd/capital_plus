@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_colors.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:capital_plus/core/constants/app_assets.dart';
+import '../../manager/lessons_progress_details_notifier.dart';
+
 class LessonsProgressDetails extends StatelessWidget {
   const LessonsProgressDetails({
     super.key,
@@ -22,7 +25,7 @@ class LessonsProgressDetails extends StatelessWidget {
             children: [
               Container(
                 width: 44.0
-                    .w, // Adjust the width and height to match the size of the circle
+                    .w, 
                 height: 44.0.h,
                 decoration: const BoxDecoration(
                   color: AppColor.blueAccent, // Background color
@@ -69,11 +72,15 @@ class LessonsProgressDetails extends StatelessWidget {
                   Text("completed",
                       style: AppStyles.body2Regular
                           .copyWith(color: AppColor.grey)),
-                  Text("2",
-                      style: AppStyles.header2
-                          .copyWith(color: AppColor.white)),
+    Consumer(
+              builder: (context, ref, child) {
+                final counterValue = ref.watch(counterProvider);
+                return Text(counterValue.toString(), style: AppStyles.header2
+                          .copyWith(color: AppColor.white));
+              },)
                 ],
               )
             ]));
   }
 }
+
