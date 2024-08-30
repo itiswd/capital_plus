@@ -10,7 +10,7 @@ class TrailingModel {
 class YearReturn{
   final String nameofCompany;
   final double rateofCompany;
-  final String rateofS$P500;
+  final double rateofS$P500;
 
   YearReturn({required this.nameofCompany, required this.rateofCompany, required this.rateofS$P500});
 
