@@ -1,18 +1,21 @@
-import 'package:capital_plus/bottom_nav_bar.dart';
-import 'package:capital_plus/features/add_investment/presentation/views/add_investment_view.dart';
-import 'package:capital_plus/features/home/presentation/views/home_view.dart';
-import 'package:capital_plus/features/onboarding/presentation/views/onboarding_view.dart';
-import 'package:capital_plus/features/premium/presentation/views/premium_view.dart';
-import 'package:capital_plus/features/splash/presentation/views/splash_view.dart';
 import 'package:get/get.dart';
+import 'package:capital_plus/bottom_nav_bar.dart';
+import '../../features/lessons/presentation/views/lessons_details_view.dart';
+import 'package:capital_plus/features/home/presentation/views/home_view.dart';
+import 'package:capital_plus/features/splash/presentation/views/splash_view.dart';
+import 'package:capital_plus/features/premium/presentation/views/premium_view.dart';
+import 'package:capital_plus/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:capital_plus/features/add_investment/presentation/views/add_investment_view.dart';
+
 
 abstract class AppRouter {
   static const String kSplashView = '/splashView';
   static const kOnBoardingView = '/onBoardingView';
   static const kHomeView = '/homeView';
-  static const kBottomNavBarController = '/KBottomNavBarController';
-  static const kAddInvestmentView = '/kAddInvestmentView';
-  static const kPremiumView = '/kPremiumView';
+  static const kBottomNavBarController = '/bottomNavBarController';
+  static const kAddInvestmentView = '/addInvestmentView';
+  static const kPremiumView = '/premiumView';
+  static const kLessonsDetailsView = '/lessonsDetailsView';
 
   static final routes = [
     GetPage(
@@ -39,5 +42,9 @@ abstract class AppRouter {
       name: kPremiumView,
       page: () => const PremiumView(),
     ),
+       GetPage(
+      name: kLessonsDetailsView,
+      page: () => const LessonsDetailsView(),
+    )
   ];
 }

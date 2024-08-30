@@ -3,16 +3,16 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_consts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
-
-
-
+import 'package:capital_plus/features/lessons/presentation/manager/lessons_progress_details_notifier.dart';
 class LessonElementState extends StateNotifier<bool> {
-  LessonElementState() : super(false) {
+  LessonElementState(this.ref) : super(false) {
     _init();
   }
-
+ int x=0;
+  final Ref ref;
   late List<bool> checkedList;
-  final List<String> lessonsList = [
+
+  static const List<String> lessonsList = [
     "Portfolio Diversification",
     "Financial Literacy",
     "Financial Independence",
@@ -26,39 +26,35 @@ class LessonElementState extends StateNotifier<bool> {
   ];
 
   void _init() {
-    checkedList = SharedPref.getBoolList(klistofCheckBox, length: 10);
-  }
-    int countTrueValues() {
-  return checkedList.where((element) => element).length;
-}   
-  List<bool> getCheckedList() {
-    return checkedList;
+    checkedList = SharedPref.getBoolList(klistofCheckBox, length: lessonsList.length);
+    print("initial checkedList: $checkedList");
   }
 
   void toggleChecked(int index) {
-    checkedList[index] = !checkedList[index];
-    SharedPref.setBoolList(klistofCheckBox, checkedList);
     print(checkedList);
+    checkedList[index] = !checkedList[index];
+    
+      print(checkedList);
+      print("******************************");
+    SharedPref.setBoolList(klistofCheckBox, checkedList);
+  
+    ref.read(counterProvider.notifier).updateCounter();
     state = !state; // Trigger a rebuild
   }
 
-  String getLesson(int index) {
-    return lessonsList[index];
-  }
+  String getLesson(int index) => lessonsList[index];
 
   bool isLocked(int index) {
     return (index == 8 || index == 9) && !SharedPref.getBool(kIsPrimium);
   }
 
-  Color getFilterColor(int index) {
-    return isLocked(index) ? AppColor.grey : Colors.transparent;
-  }
+  Color getFilterColor(int index) =>
+      isLocked(index) ? AppColor.grey : Colors.transparent;
 
-  Color? getTextColor(int index) {
-    return isLocked(index) ? AppColor.grey : null;
-  }
+  Color? getTextColor(int index) => isLocked(index) ? AppColor.grey : null;
 }
+
 final lessonElementProvider =
     StateNotifierProvider.family<LessonElementState, bool, int>((ref, index) {
-  return LessonElementState();
+  return LessonElementState(ref);
 });
