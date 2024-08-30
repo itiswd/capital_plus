@@ -40,9 +40,11 @@ class _InvestmentsState extends State<Investments> {
                   investment: investData[index],
                   isOpen: isOpen![index],
                   onTap: () {
-                    setState(() {
-                      isOpen![index] = !isOpen![index];
-                    });
+                    setState(
+                      () {
+                        isOpen![index] = !isOpen![index];
+                      },
+                    );
                   },
                 );
               },

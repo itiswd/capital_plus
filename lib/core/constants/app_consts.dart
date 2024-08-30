@@ -10,13 +10,13 @@ DateFormat dateFormat = DateFormat('dd-MM-yyyy');
 String appFontMontserrat = 'Montserrat';
 String appFontOutfit = 'Outfit';
 Map<String, double> chartValues = {
-  'Mo': 200,
-  'Tu': 250,
-  'We': 300,
-  'Th': 400,
-  'Fr': 400,
-  'Sa': 150,
-  'Su': 100,
+  'Mo': 86,
+  'Tu': 122,
+  'We': 144,
+  'Th': 152,
+  'Fr': 132,
+  'Sa': 66,
+  'Su': 44,
 };
 
 final Map<String, String> investmentsIcons = {
