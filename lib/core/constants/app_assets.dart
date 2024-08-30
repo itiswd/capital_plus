@@ -134,4 +134,5 @@ class Assets {
   static String johnsonJohnson = 'assets/icons/johnson-johnson.png';
   static String theProcterGambleCompany =
       'assets/icons/the-procter-gamble-company.png';
+  static String arrowLeft = 'assets/icons/arrow-left.svg';
 }
