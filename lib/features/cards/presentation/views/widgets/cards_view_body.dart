@@ -54,6 +54,7 @@ class CardsViewBody extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
+              const CustomCardItemsList(),
             ],
           ),
         )

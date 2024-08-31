@@ -14,6 +14,8 @@ class CustomCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 160.0.w,
+      margin: EdgeInsets.only(bottom: kVerticalPadding),
       padding: EdgeInsets.symmetric(
         horizontal: kHorizontalPadding,
         vertical: kVerticalPadding,
