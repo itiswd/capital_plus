@@ -17,39 +17,30 @@ class LessonElement extends ConsumerWidget {
     final lessonElementState = ref.watch(lessonElementProvider(index).notifier);
     ref.watch(lessonElementProvider(index));
 
-    return Stack(children: [
-      GestureDetector(
-        onTap: () {
-          lessonElementState.navigation(index);
-        },
-        child: Container(
-          margin: const EdgeInsets.only(bottom: 16.0),
-          padding: EdgeInsets.symmetric(vertical: kVerticalPadding),
-          decoration: BoxDecoration(
-            color: AppColor.lightGrey,
-            borderRadius: BorderRadius.circular(24.0),
-          ),
-          child: Row(
-            children: [
-              SizedBox(width: 16.0.w),
-              _buildIcon(lessonElementState),
-              const SizedBox(width: 12.0),
-              _buildLessonInfo(lessonElementState),
-            ],
-          ),
+    return GestureDetector(
+      onTap: () {
+        lessonElementState.navigation(index);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 16.0),
+        padding: EdgeInsets.symmetric(vertical: kVerticalPadding),
+        decoration: BoxDecoration(
+          color: AppColor.lightGrey,
+          borderRadius: BorderRadius.circular(24.0),
+        ),
+        child: Row(
+          children: [
+            SizedBox(width: 16.0.w),
+            _buildIcon(lessonElementState),
+            const SizedBox(width: 12.0),
+            _buildLessonInfo(lessonElementState),
+            const Spacer(),
+            _buildCheckbox(lessonElementState),
+            SizedBox(width: 16.0.w),
+          ],
         ),
       ),
-      Positioned(
-        right: 16.0.w,
-        top: 29.0.h,
-        child: GestureDetector(
-          onTap: () {
-          //  lessonElementState.updateBoolInList(index, value:!checkedList[index]);
-          },
-          child: _buildCheckbox(lessonElementState),
-        ),
-      ),
-    ]);
+    );
   }
 
   Widget _buildIcon(LessonElementState lessonElementState) {
@@ -92,12 +83,9 @@ class LessonElement extends ConsumerWidget {
 
   Widget _buildCheckbox(LessonElementState lessonElementState) {
     if (lessonElementState.isLocked(index)) {
-      return Padding(
-        padding: EdgeInsets.only(top: 13.0.h),
-        child: const Icon(
-          Icons.lock,
-          color: AppColor.grey,
-        ),
+      return const Icon(
+        Icons.lock,
+        color: AppColor.grey,
       );
     } else {
       return checkedList[index]
