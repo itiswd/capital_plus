@@ -14,13 +14,15 @@ class CustomCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 160.0.w,
+      margin: EdgeInsets.only(bottom: kVerticalPadding),
       padding: EdgeInsets.symmetric(
         horizontal: kHorizontalPadding,
         vertical: kVerticalPadding,
       ),
       decoration: BoxDecoration(
         color: AppColor.lightGrey,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(kRadius24),
       ),
       child: Column(
         children: [
@@ -28,8 +30,6 @@ class CustomCardItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                width: 62.0.w,
-                height: 52.0.h,
                 card.logo,
               ),
               Column(

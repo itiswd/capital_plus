@@ -1,3 +1,4 @@
+import 'package:capital_plus/core/constants/app_colors.dart';
 import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/features/cards/data/static/cards_data_static.dart';
@@ -11,26 +12,31 @@ class CustomCardItemsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverGrid.builder(
-      itemCount: cardsData.length,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: kVerticalPadding,
-        childAspectRatio: 0.9,
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 24.0.h),
+      decoration: BoxDecoration(
+        color: AppColor.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(kRadius24),
+          topRight: Radius.circular(kRadius24),
+        ),
       ),
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Get.toNamed(AppRouter.kCardDetailsView, arguments: index);
+      child: Wrap(
+        spacing: 12.0.w,
+        children: List.generate(
+          cardsData.length,
+          (index) {
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed(AppRouter.kCardDetailsView, arguments: index);
+              },
+              child: CustomCardItem(
+                card: cardsData[index],
+              ),
+            );
           },
-          child: Padding(
-            padding: EdgeInsets.only(right: 8.0.w, left: 8.0.w),
-            child: CustomCardItem(
-              card: cardsData[index],
-            ),
-          ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

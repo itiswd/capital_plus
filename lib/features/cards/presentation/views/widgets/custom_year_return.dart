@@ -5,12 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomYearReturn extends StatelessWidget {
-  const CustomYearReturn(
-      {super.key,
-      required this.yearName,
-      required this.msft,
-      required this.sp500,
-      required this.nameofCompany});
+  const CustomYearReturn({
+    super.key,
+    required this.yearName,
+    required this.msft,
+    required this.sp500,
+    required this.nameofCompany,
+  });
   final String yearName;
   final String nameofCompany;
   final String msft;

@@ -15,7 +15,7 @@ class CustomInformationCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: kHorizontalPadding, vertical: kVerticalPadding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(kRadius24),
         border: Border.all(
           color: AppColor.blueAccent,
           width: 1,
@@ -26,13 +26,16 @@ class CustomInformationCard extends StatelessWidget {
         children: [
           Text(
             'Company History:',
-            style: AppStyles.header1.copyWith(
+            style: AppStyles.header2.copyWith(
               color: AppColor.blue,
               fontFamily: appFontOutfit,
             ),
           ),
           SizedBox(height: 12.h),
-          Text(companyData[cardIndex].companyHistory),
+          Text(
+            companyData[cardIndex].companyHistory,
+            style: AppStyles.body2Regular,
+          ),
         ],
       ),
     );
