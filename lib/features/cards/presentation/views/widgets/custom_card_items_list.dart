@@ -13,8 +13,7 @@ class CustomCardItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:
-          EdgeInsets.symmetric(horizontal: 12.0.w, vertical: kVerticalPadding),
+      padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 24.0.h),
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.only(
