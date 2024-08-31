@@ -11,15 +11,14 @@ import 'package:capital_plus/features/add_investment/presentation/views/add_inve
 
 abstract class AppRouter {
   static const String kSplashView = '/splashView';
-  static const kOnBoardingView = '/onBoardingView';
-  static const kHomeView = '/homeView';
-  static const kBottomNavBarController = '/bottomNavBarController';
-  static const kAddInvestmentView = '/addInvestmentView';
-  static const kPremiumView = '/premiumView';
-  static const kLessonsDetailsView = '/lessonsDetailsView';
-  static const kCardsView = '/cardsView';
-  static const kCardDetailsView = '/cardDetailsView';
-
+  static const String kOnBoardingView = '/onBoardingView';
+  static const String kHomeView = '/homeView';
+  static const String kBottomNavBarController = '/bottomNavBarController';
+  static const String kAddInvestmentView = '/addInvestmentView';
+  static const String kPremiumView = '/premiumView';
+  static const String kLessonsDetailsView = '/lessonsDetailsView';
+  static const String kCardsView = '/cardsView';
+  static const String kCardDetailsView = '/cardDetailsView';
   static final routes = [
     GetPage(
       name: kSplashView,

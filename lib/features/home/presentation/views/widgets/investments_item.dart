@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';
 import 'package:capital_plus/features/home/data/static/home_static_data.dart';
@@ -29,7 +30,7 @@ class InvestmentsItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Spacer(),
-            SizedBox(height: 16.0.h),
+            SizedBox(height: kVerticalPadding),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -130,7 +131,7 @@ class InvestmentsItem extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16.0.h),
+            SizedBox(height: kVerticalPadding),
             const Spacer(),
             //Divider
             const Divider(

@@ -1,10 +1,12 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
+double kHorizontalPadding = 16.0.w;
+double kVerticalPadding = 16.0.h;
+const String kInvestmentHiveBox = 'kInvestmentBox';
+const String klistofCheckBox = 'listofCheckBox';
 const String kIsOnBoardingView = 'isOnBoardingView';
 const String kIsPrimium = 'isPrimium';
-const String klistofCheckBox = 'listofCheckBox';
-const double kHorizontalPadding = 16.0;
-const String kInvestmentHiveBox = 'kInvestmentBox';
 List<bool> checkedList = [];
 int trueCount = 0;
 DateFormat dateFormat = DateFormat('dd-MM-yyyy');

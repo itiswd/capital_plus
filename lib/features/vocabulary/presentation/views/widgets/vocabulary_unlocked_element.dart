@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/features/vocabulary/model/vocabulary_model.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16.0.h),
+      padding: EdgeInsets.only(bottom: kVerticalPadding),
       child: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
@@ -29,7 +30,7 @@ class VocabularyUnlockedElement extends StatelessWidget {
                 Text(
                   vocabulary.title,
                   style: AppStyles.header2.copyWith(
-                    fontFamily: 'Outfit',
+                    fontFamily: appFontOutfit,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/core/widgets/main_custom_button.dart';
@@ -17,7 +18,7 @@ class VocabularyLockedElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 16.0.h),
+      padding: EdgeInsets.only(bottom: kVerticalPadding),
       child: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
@@ -39,7 +40,7 @@ class VocabularyLockedElement extends StatelessWidget {
                   style: AppStyles.header2.copyWith(
                     fontSize: 19.0.sp,
                     color: AppColor.darkGrey,
-                    fontFamily: 'Outfit',
+                    fontFamily: appFontOutfit,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

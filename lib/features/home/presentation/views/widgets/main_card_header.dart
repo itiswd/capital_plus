@@ -1,5 +1,6 @@
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_router.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -47,16 +48,14 @@ class MainCardHeader extends StatelessWidget {
                   '\$',
                   style: AppStyles.header1.copyWith(
                     color: AppColor.white,
-                    fontFamily: 'Outfit',
+                    fontFamily: appFontOutfit,
                   ),
                 ),
                 SizedBox(width: 8.0.w),
                 Text(
                   totalAmount,
                   style: AppStyles.header1.copyWith(
-                    color: AppColor.white,
-                    fontFamily: 'Outfit',
-                  ),
+                      color: AppColor.white, fontFamily: appFontOutfit),
                 ),
               ],
             )

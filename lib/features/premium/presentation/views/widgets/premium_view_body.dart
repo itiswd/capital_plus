@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/widgets/main_custom_button.dart';
 import 'package:capital_plus/features/premium/presentation/views/widgets/premium_app_bar.dart';
 import 'package:capital_plus/features/premium/presentation/views/widgets/premium_bottom_actions.dart';
@@ -16,7 +17,9 @@ class PremiumViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+        padding: EdgeInsets.symmetric(
+          horizontal: kHorizontalPadding,
+        ),
         child: Column(
           children: [
             SizedBox(height: 20.0.h),

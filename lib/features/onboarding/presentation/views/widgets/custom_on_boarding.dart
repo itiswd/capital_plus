@@ -1,3 +1,4 @@
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +32,7 @@ class CustomOnBoarding extends StatelessWidget {
                 customItemList[index].title,
                 style: AppStyles.header1.copyWith(
                   fontSize: 22.sp,
-                  fontFamily: 'Outfit',
+                  fontFamily: appFontOutfit,
                 ),
                 textAlign: TextAlign.center,
               ),

@@ -1,3 +1,4 @@
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/features/vocabulary/data/vocabulary_static_data.dart';
 import 'package:capital_plus/features/vocabulary/presentation/views/widgets/vocabulary_unlocked_element.dart';
@@ -12,7 +13,7 @@ class VocabularyBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: ListView(
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,
@@ -22,7 +23,7 @@ class VocabularyBody extends StatelessWidget {
               child: Text(
                 'Vocabulary',
                 style: AppStyles.header1.copyWith(
-                  fontFamily: 'Outfit',
+                  fontFamily: appFontOutfit,
                 ),
               ),
             ),

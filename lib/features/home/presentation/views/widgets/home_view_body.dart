@@ -25,7 +25,7 @@ class HomeBody extends ConsumerWidget {
 
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         child: ListView(
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.zero,

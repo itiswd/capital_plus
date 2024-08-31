@@ -13,7 +13,7 @@ class LessonsViewBody extends StatelessWidget {
     return SafeArea(
       child: ListView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
         children: [
           SizedBox(height: 20.0.h),
           Text(
