@@ -50,7 +50,7 @@ class LessonElement extends ConsumerWidget {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              lessonElementState.checkBox(index);
+              lessonElementState.updateBoolInList(index);
             },
             child: _buildCheckbox(lessonElementState),
           ),
