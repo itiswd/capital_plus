@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:capital_plus/features/add_investment/presentation/managers/investment_provider.dart';
 import 'package:capital_plus/features/home/presentation/manager/investments_open_notifier.dart';
 import 'package:capital_plus/features/home/presentation/views/widgets/investments_item.dart';
-import 'package:flutter/material.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Investments extends ConsumerWidget {
   const Investments({
@@ -32,13 +34,27 @@ class Investments extends ConsumerWidget {
                 // Watch the open state for this specific investment item
                 final isOpen = ref.watch(investmentOpenProvider(index));
 
-                return InvestmentsItem(
-                  investment: investments[index],
-                  isOpen: isOpen, // Pass the current open state
-                  onTap: () {
-                    // Toggle the open state when the item is tapped
-                    ref.read(investmentOpenProvider(index).notifier).toggle();
-                  },
+                return Slidable(
+                  endActionPane: ActionPane(
+                    motion: const StretchMotion(),
+                    children: [
+                      SlidableAction(
+                        icon: Icons.delete,
+                        label: 'Delete',
+                        backgroundColor: Colors.red,
+                        borderRadius: BorderRadius.circular(16.r),
+                        onPressed: (context) {},
+                      ),
+                    ],
+                  ),
+                  child: InvestmentsItem(
+                    investment: investments[index],
+                    isOpen: isOpen, // Pass the current open state
+                    onTap: () {
+                      // Toggle the open state when the item is tapped
+                      ref.read(investmentOpenProvider(index).notifier).toggle();
+                    },
+                  ),
                 );
               },
             ),
