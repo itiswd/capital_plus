@@ -18,20 +18,18 @@ class CardDetailsViewBody extends StatelessWidget {
           color: AppColor.blueAccent,
           height: (Get.height / 2).h,
         ),
-        SafeArea(
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              CustomCardDetailsViewAppBar(
-                appBarTitle: cardsData[cardIndex].name,
-                appBarTrailingLogo: cardsData[cardIndex].logo,
-              ),
-              SizedBox(height: 24.h),
-              CardInformation(
-                cardIndex: cardIndex,
-              ),
-            ],
-          ),
+        ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            CustomCardDetailsViewAppBar(
+              appBarTitle: cardsData[cardIndex].name,
+              appBarTrailingLogo: cardsData[cardIndex].logo,
+            ),
+            SizedBox(height: 24.h),
+            CardInformation(
+              cardIndex: cardIndex,
+            ),
+          ],
         )
       ],
     );

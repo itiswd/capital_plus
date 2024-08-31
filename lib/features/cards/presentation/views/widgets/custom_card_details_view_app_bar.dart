@@ -19,7 +19,7 @@ class CustomCardDetailsViewAppBar extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: Row(
         children: [
-          SizedBox(height: 100.h),
+          SizedBox(height: 74.h),
           GestureDetector(
             onTap: () {
               Get.back();

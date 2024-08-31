@@ -19,44 +19,42 @@ class CardsViewBody extends StatelessWidget {
           color: AppColor.blueAccent,
           height: (Get.height / 2).h,
         ),
-        SafeArea(
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              SizedBox(height: 20.0.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 20.h),
-                        Text(
-                          'Find Out More!',
-                          style: AppStyles.header1.copyWith(
-                            color: AppColor.white,
-                            fontFamily: appFontOutfit,
-                          ),
+        ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            SizedBox(height: 24.0.h),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 20.h),
+                      Text(
+                        'Find Out More!',
+                        style: AppStyles.header1.copyWith(
+                          color: AppColor.white,
+                          fontFamily: appFontOutfit,
                         ),
-                        SizedBox(height: 10.h),
-                        Text(
-                          'About companies and their stocks',
-                          style: AppStyles.body2Regular.copyWith(
-                            color: AppColor.white.withOpacity(0.8),
-                          ),
+                      ),
+                      SizedBox(height: 10.h),
+                      Text(
+                        'About companies and their stocks',
+                        style: AppStyles.body2Regular.copyWith(
+                          color: AppColor.white.withOpacity(0.8),
                         ),
-                      ],
-                    ),
-                    SvgPicture.asset(Assets.iconsSearch),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  SvgPicture.asset(Assets.iconsSearch),
+                ],
               ),
-              SizedBox(height: 24.h),
-              const CustomCardItemsList(),
-            ],
-          ),
+            ),
+            SizedBox(height: 24.h),
+            const CustomCardItemsList(),
+          ],
         )
       ],
     );

@@ -18,18 +18,16 @@ class LessonsDetailsViewBody extends StatelessWidget {
             height: (Get.height / 2).h,
             color: AppColor.blueAccent,
           ),
-          SafeArea(
-            child: ListView(
-              physics: const BouncingScrollPhysics(),
-              children: [
-                SizedBox(height: 20.h),
-                BuildLessonDetailCard(index: index),
-                SizedBox(height: 24.h),
-                LessonContent(
-                  index: index,
-                ),
-              ],
-            ),
+          ListView(
+            physics: const BouncingScrollPhysics(),
+            children: [
+              SizedBox(height: 20.h),
+              BuildLessonDetailCard(index: index),
+              SizedBox(height: 24.h),
+              LessonContent(
+                index: index,
+              ),
+            ],
           ),
         ],
       ),
