@@ -19,13 +19,6 @@ class LessonElementState extends StateNotifier<bool> {
     Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
   }
 
-  void checkBox(int index) {
-    if (isLocked(index)) {
-    } else {
-      updateBoolInList(index);
-    }
-  }
-
   Future<void> initializeCheckedList() async {
     Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
     checkedList = box.get(klistofCheckBox,
