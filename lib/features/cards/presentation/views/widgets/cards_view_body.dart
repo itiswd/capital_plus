@@ -6,63 +6,111 @@ import 'package:capital_plus/features/cards/presentation/views/widgets/custom_ca
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CardsViewBody extends StatelessWidget {
   const CardsViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverAppBar(
-          backgroundColor: AppColor.blueAccent,
-          toolbarHeight: 150.h,
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: kHorizontalPadding),
-              child: SvgPicture.asset(Assets.iconsSearch),
-            ),
-          ],
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return Stack(
+      children: [
+        Container(
+          color: AppColor.blueAccent,
+          height: (Get.height / 2).h,
+        ),
+        SafeArea(
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
-              SizedBox(height: 20.h),
-              Text(
-                'Find Out More!',
-                style: AppStyles.header1.copyWith(
-                  color: AppColor.white,
-                  fontFamily: appFontOutfit,
+              SizedBox(height: 20.0.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20.h),
+                        Text(
+                          'Find Out More!',
+                          style: AppStyles.header1.copyWith(
+                            color: AppColor.white,
+                            fontFamily: appFontOutfit,
+                          ),
+                        ),
+                        SizedBox(height: 10.h),
+                        Text(
+                          'About companies and their stocks',
+                          style: AppStyles.body2Regular.copyWith(
+                            color: AppColor.white.withOpacity(0.8),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SvgPicture.asset(Assets.iconsSearch),
+                  ],
                 ),
               ),
-              SizedBox(height: 10.h),
-              Text(
-                'About companies and their stocks',
-                style: AppStyles.body2Regular.copyWith(
-                  color: AppColor.white.withOpacity(0.8),
-                ),
-              ),
+              SizedBox(height: 24.h),
             ],
           ),
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(10),
-            child: Container(
-              height: 40.h,
-              clipBehavior: Clip.none,
-              decoration: BoxDecoration(
-                color: AppColor.white,
-                border: Border.all(color: AppColor.white),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(kRadius36),
-                  topRight: Radius.circular(kRadius36),
-                ),
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(child: SizedBox(height: 10.h)),
-        const CustomCardItemsList(),
+        )
       ],
     );
+
+    // CustomScrollView(
+    //   physics: const BouncingScrollPhysics(),
+    //   slivers: [
+    //     SliverAppBar(
+    //       backgroundColor: AppColor.blueAccent,
+    //       toolbarHeight: 150.h,
+    //       actions: [
+    //         Padding(
+    //           padding: EdgeInsets.only(right: kHorizontalPadding),
+    //           child: SvgPicture.asset(Assets.iconsSearch),
+    //         ),
+    //       ],
+    // title: Column(
+    //   crossAxisAlignment: CrossAxisAlignment.start,
+    //   children: [
+    //     SizedBox(height: 20.h),
+    //     Text(
+    //       'Find Out More!',
+    //       style: AppStyles.header1.copyWith(
+    //         color: AppColor.white,
+    //         fontFamily: appFontOutfit,
+    //       ),
+    //     ),
+    //     SizedBox(height: 10.h),
+    //     Text(
+    //       'About companies and their stocks',
+    //       style: AppStyles.body2Regular.copyWith(
+    //         color: AppColor.white.withOpacity(0.8),
+    //       ),
+    //     ),
+    //   ],
+    // ),
+    //       bottom: PreferredSize(
+    //         preferredSize: const Size.fromHeight(10),
+    //         child: Container(
+    //           height: 20.h,
+    //           clipBehavior: Clip.none,
+    //           decoration: BoxDecoration(
+    //             color: AppColor.white,
+    //             border: Border.all(color: AppColor.white),
+    //             borderRadius: BorderRadius.only(
+    //               topLeft: Radius.circular(kRadius36),
+    //               topRight: Radius.circular(kRadius36),
+    //             ),
+    //           ),
+    //         ),
+    //       ),
+    //     ),
+    //     SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+    //     const CustomCardItemsList(),
+    //   ],
+    // );
   }
 }
