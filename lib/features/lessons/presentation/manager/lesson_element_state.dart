@@ -17,6 +17,7 @@ class LessonElementState extends StateNotifier<bool> {
 
   void navigation(int index) {
     if (isLocked(index)) {
+      Get.toNamed(AppRouter.kPremiumView);
     } else {
       updateBoolInList(index);
       Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
