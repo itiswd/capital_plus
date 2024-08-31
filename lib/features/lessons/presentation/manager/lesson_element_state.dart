@@ -15,7 +15,7 @@ class LessonElementState extends StateNotifier<bool> {
   int x = 0;
   final Ref ref;
 
-   void navigation(int index) {
+  void navigation(int index) {
     if (isLocked(index)) {
     } else {
       updateBoolInList(index);
@@ -32,18 +32,11 @@ class LessonElementState extends StateNotifier<bool> {
   }
 
   Future<void> updateBoolInList(int index, {bool value = true}) async {
-    // Step 1: Open the box
     Box<List<bool>> box = await openBox<List<bool>>(klistofCheckBox);
-
-    // Step 2: Retrieve the list from the box
     List<bool> boolList = box.get(klistofCheckBox,
         defaultValue: List<bool>.filled(lessonsList.length, false))!;
-
-    // Step 3: Update the value at the specified index
     if (index >= 0 && index < boolList.length) {
       boolList[index] = value;
-
-      // Step 4: Save the updated list back to the box
       await box.put(klistofCheckBox, boolList);
       ref.read(counterProvider.notifier).getCheckBoxValues();
       state = boolList[index];

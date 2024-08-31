@@ -44,7 +44,7 @@ class LessonElement extends ConsumerWidget {
         top: 29.0.h,
         child: GestureDetector(
           onTap: () {
-            lessonElementState.updateBoolInList(index , value: !checkedList[index]);
+          //  lessonElementState.updateBoolInList(index, value:!checkedList[index]);
           },
           child: _buildCheckbox(lessonElementState),
         ),
