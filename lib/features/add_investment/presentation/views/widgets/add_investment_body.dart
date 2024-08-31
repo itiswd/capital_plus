@@ -50,7 +50,7 @@ class _AddInvestmentBodyState extends ConsumerState<AddInvestmentBody> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
           child: Form(
             key: formState,
             child: Column(

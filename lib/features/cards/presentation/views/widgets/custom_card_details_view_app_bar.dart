@@ -16,7 +16,7 @@ class CustomCardDetailsViewAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
+      margin: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       child: Row(
         children: [
           SizedBox(height: 100.h),

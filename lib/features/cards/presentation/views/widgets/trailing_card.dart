@@ -1,4 +1,5 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:capital_plus/features/cards/data/static/company_data_static.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/custom_year_return.dart';
@@ -12,7 +13,8 @@ class TrailingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(
+          horizontal: kHorizontalPadding, vertical: kVerticalPadding),
       decoration: BoxDecoration(
         color: AppColor.blue,
         borderRadius: BorderRadius.circular(24.r),

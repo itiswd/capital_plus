@@ -14,8 +14,10 @@ class CustomCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:
-          EdgeInsets.symmetric(horizontal: kHorizontalPadding, vertical: 16.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: kHorizontalPadding,
+        vertical: kVerticalPadding,
+      ),
       decoration: BoxDecoration(
         color: AppColor.lightGrey,
         borderRadius: BorderRadius.circular(16.r),
@@ -25,7 +27,11 @@ class CustomCardItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset(card.logo),
+              Image.asset(
+                width: 62.0.w,
+                height: 52.0.h,
+                card.logo,
+              ),
               Column(
                 children: [
                   Text(

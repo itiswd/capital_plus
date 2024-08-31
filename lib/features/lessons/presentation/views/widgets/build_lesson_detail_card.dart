@@ -14,8 +14,11 @@ class BuildLessonDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
-      padding: EdgeInsets.only(top: 16.h, bottom: 16.h, right: 16.w),
+      margin: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+      padding: EdgeInsets.only(
+          top: kVerticalPadding,
+          bottom: kVerticalPadding,
+          right: kHorizontalPadding),
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.circular(24.r),

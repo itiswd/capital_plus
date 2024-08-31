@@ -34,7 +34,7 @@ class LessonContent extends StatelessWidget {
             lessonsData[index].subtitleOne,
             style: AppStyles.body2Regular,
           ),
-          SizedBox(height: 16.h),
+          SizedBox(height: kVerticalPadding),
           Text(
             lessonsData[index].titleTwo,
             style: AppStyles.header2.copyWith(

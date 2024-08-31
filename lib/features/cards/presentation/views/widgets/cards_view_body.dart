@@ -20,7 +20,7 @@ class CardsViewBody extends StatelessWidget {
           toolbarHeight: 150.h,
           actions: [
             Padding(
-              padding: EdgeInsets.only(right: 16.w),
+              padding: EdgeInsets.only(right: kHorizontalPadding),
               child: SvgPicture.asset(Assets.iconsSearch),
             ),
           ],
