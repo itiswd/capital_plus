@@ -43,7 +43,7 @@ class LessonElementState extends StateNotifier<bool> {
 
     // Step 3: Update the value at the specified index
     if (index >= 0 && index < boolList.length) {
-      boolList[index] = true;
+      boolList[index] = !boolList[index];
 
       // Step 4: Save the updated list back to the box
       await box.put(klistofCheckBox, boolList);
