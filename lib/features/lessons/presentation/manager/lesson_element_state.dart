@@ -15,10 +15,13 @@ class LessonElementState extends StateNotifier<bool> {
   final Ref ref;
 
   void navigation(int index) {
+    Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
+  }
+
+  void checkBox(int index) {
     if (isLocked(index)) {
     } else {
       updateBoolInList(index);
-      Get.toNamed(AppRouter.kLessonsDetailsView, arguments: index);
     }
   }
 

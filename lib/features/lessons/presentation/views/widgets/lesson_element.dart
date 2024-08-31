@@ -17,26 +17,45 @@ class LessonElement extends ConsumerWidget {
     final lessonElementState = ref.watch(lessonElementProvider(index).notifier);
     ref.watch(lessonElementProvider(index));
 
-    return GestureDetector(
-      onTap: () {
-        lessonElementState.navigation(index);
-      },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 16.0),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: AppColor.lightGrey,
-          borderRadius: BorderRadius.circular(24.0),
-        ),
-        child: Row(
-          children: [
-            _buildIcon(lessonElementState),
-            const SizedBox(width: 12.0),
-            _buildLessonInfo(lessonElementState),
-            const Spacer(),
-            _buildCheckbox(lessonElementState),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16.0),
+      // padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppColor.lightGrey,
+        borderRadius: BorderRadius.circular(24.0),
+      ),
+      child: Row(
+        children: [
+          GestureDetector(
+            onTap: () {
+              lessonElementState.navigation(index);
+            },
+            child: Container(
+              width: 275.0.w,
+              padding: EdgeInsets.symmetric(vertical: 16.0.h),
+              decoration: BoxDecoration(
+                color: AppColor.lightGrey,
+                borderRadius: BorderRadius.circular(24.0),
+              ),
+              child: Row(
+                children: [
+                  SizedBox(width: 16.0.w),
+                  _buildIcon(lessonElementState),
+                  const SizedBox(width: 12.0),
+                  _buildLessonInfo(lessonElementState),
+                ],
+              ),
+            ),
+          ),
+          const Spacer(),
+          GestureDetector(
+            onTap: () {
+              lessonElementState.checkBox(index);
+            },
+            child: _buildCheckbox(lessonElementState),
+          ),
+          SizedBox(width: 16.0.w),
+        ],
       ),
     );
   }
