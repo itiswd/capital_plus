@@ -21,6 +21,7 @@ class CardDetailsViewBody extends StatelessWidget {
         ListView(
           physics: const BouncingScrollPhysics(),
           children: [
+            SizedBox(height: 24.h),
             CustomCardDetailsViewAppBar(
               appBarTitle: cardsData[cardIndex].name,
               appBarTrailingLogo: cardsData[cardIndex].logo,
