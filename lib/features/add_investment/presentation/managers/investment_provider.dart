@@ -15,6 +15,11 @@ final investmentListProvider =
   return InvestmentListNotifier(investmentBox);
 });
 
+//Max value
+final maxValue = chartValues.values.reduce(
+  (value, element) => value > element ? value : element,
+);
+
 class InvestmentListNotifier extends StateNotifier<List<InvestmentModel>> {
   final Box<InvestmentModel> investmentBox;
 

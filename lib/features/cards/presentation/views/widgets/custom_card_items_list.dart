@@ -14,13 +14,13 @@ class CustomCardItemsList extends StatelessWidget {
       itemCount: cardsData.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        // crossAxisSpacing: 16.w,
-        mainAxisSpacing: 36.h,
+        mainAxisSpacing: 16.h,
         childAspectRatio: 0.9,
       ),
       itemBuilder: (context, index) {
         return Padding(
-          padding: EdgeInsets.only(right: 10.w, left: 10.w),
+          padding:
+              EdgeInsets.only(right: 16.w, left: index % 2 == 0 ? 16.w : 0),
           child: GestureDetector(
             onTap: () {
               Get.toNamed(AppRouter.kCardDetailsView, arguments: index);

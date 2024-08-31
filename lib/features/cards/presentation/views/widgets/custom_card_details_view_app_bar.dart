@@ -25,7 +25,7 @@ class CustomCardDetailsViewAppBar extends StatelessWidget {
               Get.back();
             },
             child: SvgPicture.asset(
-              Assets.arrowLeft,
+              Assets.iconsArrowLeftWhite,
             ),
           ),
           SizedBox(width: 12.w),

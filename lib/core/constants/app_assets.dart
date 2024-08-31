@@ -2,6 +2,18 @@
 class Assets {
   Assets._();
 
+  /// Assets for iconsAlibaba
+  /// assets/icons/alibaba.png
+  static const String iconsAlibaba = "assets/icons/alibaba.png";
+
+  /// Assets for iconsAmazon
+  /// assets/icons/amazon.png
+  static const String iconsAmazon = "assets/icons/amazon.png";
+
+  /// Assets for iconsApple
+  /// assets/icons/apple.png
+  static const String iconsApple = "assets/icons/apple.png";
+
   /// Assets for iconsArrowBack
   /// assets/icons/arrow-back.svg
   static const String iconsArrowBack = "assets/icons/arrow-back.svg";
@@ -17,6 +29,15 @@ class Assets {
   /// Assets for iconsArrowLeft
   /// assets/icons/arrow_left.svg
   static const String iconsArrowLeft = "assets/icons/arrow_left.svg";
+
+  /// Assets for iconsArrowLeftWhite
+  /// assets/icons/arrow_left_white.svg
+  static const String iconsArrowLeftWhite = "assets/icons/arrow_left_white.svg";
+
+  /// Assets for iconsBerkshireHathaway
+  /// assets/icons/berkshire-hathaway.png
+  static const String iconsBerkshireHathaway =
+      "assets/icons/berkshire-hathaway.png";
 
   /// Assets for iconsButtonOpen
   /// assets/icons/button_open.svg
@@ -51,6 +72,10 @@ class Assets {
   static const String iconsFluentIosArrow24Filled =
       "assets/icons/fluent_ios_arrow_24_filled.svg";
 
+  /// Assets for iconsGoogle
+  /// assets/icons/google.png
+  static const String iconsGoogle = "assets/icons/google.png";
+
   /// Assets for iconsIcRoundNoteAlt
   /// assets/icons/ic_round-note-alt.svg
   static const String iconsIcRoundNoteAlt =
@@ -81,6 +106,15 @@ class Assets {
   static const String iconsInvestmentStocksIcon =
       "assets/icons/investment_stocks_icon.svg";
 
+  /// Assets for iconsJohnsonJohnson
+  /// assets/icons/johnson-johnson.png
+  static const String iconsJohnsonJohnson = "assets/icons/johnson-johnson.png";
+
+  /// Assets for iconsJpMorganChaseCo
+  /// assets/icons/jp-morgan-chase-co.png
+  static const String iconsJpMorganChaseCo =
+      "assets/icons/jp-morgan-chase-co.png";
+
   /// Assets for iconsLock
   /// assets/icons/lock.svg
   static const String iconsLock = "assets/icons/lock.svg";
@@ -109,6 +143,14 @@ class Assets {
   static const String iconsLogoOnboarding3 =
       "assets/icons/logo_onboarding_3.svg";
 
+  /// Assets for iconsMeta
+  /// assets/icons/meta.png
+  static const String iconsMeta = "assets/icons/meta.png";
+
+  /// Assets for iconsMicrosoft
+  /// assets/icons/microsoft.png
+  static const String iconsMicrosoft = "assets/icons/microsoft.png";
+
   /// Assets for iconsOpenLock
   /// assets/icons/open_lock.svg
   static const String iconsOpenLock = "assets/icons/open_lock.svg";
@@ -117,22 +159,28 @@ class Assets {
   /// assets/icons/search.svg
   static const String iconsSearch = "assets/icons/search.svg";
 
+  /// Assets for iconsTesla
+  /// assets/icons/tesla.png
+  static const String iconsTesla = "assets/icons/tesla.png";
+
+  /// Assets for iconsTheProcterGambleCompany
+  /// assets/icons/the-procter-gamble-company.png
+  static const String iconsTheProcterGambleCompany =
+      "assets/icons/the-procter-gamble-company.png";
+
   /// Assets for iconsVector
   /// assets/icons/Vector.svg
   static const String iconsVector = "assets/icons/Vector.svg";
 
-  static String apple = 'assets/icons/apple.png';
-  static String amazon = 'assets/icons/amazon.png';
-  static String google = 'assets/icons/google.png';
-  static String microsoft = 'assets/icons/microsoft.png';
-  static String tesla = 'assets/icons/tesla.png';
-  static String meta = 'assets/icons/meta.png';
-  static String alibaba = 'assets/icons/alibaba.png';
-  static String visa = 'assets/icons/visa.png';
-  static String berkshireHathaway = 'assets/icons/berkshire-hathaway.png';
-  static String jPMorganChaseCo = 'assets/icons/jp-morgan-chase-co.png';
-  static String johnsonJohnson = 'assets/icons/johnson-johnson.png';
-  static String theProcterGambleCompany =
-      'assets/icons/the-procter-gamble-company.png';
-  static String arrowLeft = 'assets/icons/arrow-left.svg';
+  /// Assets for iconsVector8
+  /// assets/icons/Vector8.svg
+  static const String iconsVector8 = "assets/icons/Vector8.svg";
+
+  /// Assets for iconsVector9
+  /// assets/icons/Vector9.svg
+  static const String iconsVector9 = "assets/icons/Vector9.svg";
+
+  /// Assets for iconsVisa
+  /// assets/icons/visa.png
+  static const String iconsVisa = "assets/icons/visa.png";
 }

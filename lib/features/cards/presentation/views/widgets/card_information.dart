@@ -1,4 +1,6 @@
+import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/features/cards/presentation/views/widgets/cards_details_dotted_line.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/custom_company_history.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/custom_company_information.dart';
 import 'package:capital_plus/features/cards/presentation/views/widgets/interesting_fact.dart';
@@ -26,15 +28,21 @@ class CardInformation extends StatelessWidget {
           CustomCompanyInformation(
             cardIndex: cardIndex,
           ),
-          SizedBox(height: 70.h),
+          const CardsDetailsDottedLine(
+            image: Assets.iconsVector8,
+          ),
           CustomInformationCard(
             cardIndex: cardIndex,
           ),
-          SizedBox(height: 70.h),
+          const CardsDetailsDottedLine(
+            image: Assets.iconsVector9,
+          ),
           InterestingFact(
             cardIndex: cardIndex,
           ),
-          SizedBox(height: 70.h),
+          const CardsDetailsDottedLine(
+            image: Assets.iconsVector8,
+          ),
           TrailingCard(
             cardIndex: cardIndex,
           ),

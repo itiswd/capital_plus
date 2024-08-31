@@ -13,6 +13,7 @@ class CardsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverAppBar(
           backgroundColor: AppColor.blueAccent,
