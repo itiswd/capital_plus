@@ -15,7 +15,8 @@ class CardInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      padding: EdgeInsets.symmetric(
+          horizontal: kHorizontalPadding, vertical: kVerticalPadding),
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.only(

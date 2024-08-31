@@ -47,7 +47,7 @@ class CardsViewBody extends StatelessWidget {
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(10),
             child: Container(
-              height: 20.h,
+              height: 40.h,
               clipBehavior: Clip.none,
               decoration: BoxDecoration(
                 color: AppColor.white,
