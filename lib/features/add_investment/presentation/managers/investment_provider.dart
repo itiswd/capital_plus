@@ -1,3 +1,4 @@
+import 'package:capital_plus/features/home/data/static/home_static_data.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive/hive.dart';
 import 'package:capital_plus/features/add_investment/data/models/investment_model.dart';

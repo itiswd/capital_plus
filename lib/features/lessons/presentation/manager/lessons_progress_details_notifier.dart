@@ -1,3 +1,4 @@
+import 'package:capital_plus/features/lessons/data/static/lessons_data_static.dart';
 import 'package:hive/hive.dart';
 import '../../../../core/constants/app_consts.dart';
 import '../../../../core/service/hive_service.dart';

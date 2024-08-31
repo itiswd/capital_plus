@@ -1,3 +1,4 @@
+import 'package:capital_plus/features/lessons/data/static/lessons_data_static.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter/material.dart';

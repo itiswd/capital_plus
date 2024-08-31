@@ -92,3 +92,16 @@ List<LessonsModel> lessonsData = [
         "Managing emotions is an important part of successful investing. This includes developing an investment plan and strictly following it despite short-term market fluctuations. It is also helpful to be aware of your cognitive biases, such as confirmation bias or overconfidence, to avoid making mistakes when making decisions.",
   )
 ];
+
+const List<String> lessonsList = [
+  "Portfolio Diversification",
+  "Financial Literacy",
+  "Financial Independence",
+  "Risk Management",
+  "Market Analysis",
+  "Passive and Active\nInvesting",
+  "Taxes and Investment",
+  "Selecting Assets",
+  "The Importance\nof Liquidity",
+  "Behavioral Economics\nand Investment"
+];

@@ -1,6 +1,6 @@
 import 'package:capital_plus/core/constants/app_colors.dart';
-import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
+import 'package:capital_plus/features/premium/data/static/premium_static_data.dart';
 import 'package:flutter/material.dart';
 
 class PremiumBottomAction extends StatelessWidget {

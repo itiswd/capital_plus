@@ -40,7 +40,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
   void _onNextPressed() {
     if (_currentPage < 2) {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
       );
     } else {
