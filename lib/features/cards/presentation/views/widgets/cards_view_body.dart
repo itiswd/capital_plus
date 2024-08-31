@@ -48,7 +48,10 @@ class CardsViewBody extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SvgPicture.asset(Assets.iconsSearch),
+                  SvgPicture.asset(
+                    width: 44.w,
+                    Assets.iconsSearch,
+                  ),
                 ],
               ),
             ),
