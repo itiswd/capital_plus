@@ -17,7 +17,7 @@ class TrailingCard extends StatelessWidget {
           horizontal: kHorizontalPadding, vertical: kVerticalPadding),
       decoration: BoxDecoration(
         color: AppColor.blue,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(kRadius24),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

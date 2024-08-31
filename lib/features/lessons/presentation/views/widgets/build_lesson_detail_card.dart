@@ -21,7 +21,7 @@ class BuildLessonDetailCard extends StatelessWidget {
           right: kHorizontalPadding),
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(kRadius24),
       ),
       child: Row(
         children: [

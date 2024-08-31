@@ -23,7 +23,7 @@ class VocabularyLockedElement extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: AppColor.grey,
-          borderRadius: BorderRadius.circular(24.0.r),
+          borderRadius: BorderRadius.circular(kRadius24),
         ),
         child: Column(
           children: [
@@ -56,7 +56,7 @@ class VocabularyLockedElement extends StatelessWidget {
                       width: 1,
                       color: AppColor.blueAccent,
                     ),
-                    borderRadius: BorderRadius.circular(24.0.r),
+                    borderRadius: BorderRadius.circular(kRadius24),
                   ),
                   child: Center(
                     child: Text('PRO',

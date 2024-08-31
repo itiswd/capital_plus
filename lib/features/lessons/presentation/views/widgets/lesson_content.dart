@@ -11,12 +11,13 @@ class LessonContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      padding: EdgeInsets.symmetric(
+          horizontal: kHorizontalPadding, vertical: kVerticalPadding),
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
+          topLeft: Radius.circular(kRadius36),
+          topRight: Radius.circular(kRadius36),
         ),
       ),
       child: Column(

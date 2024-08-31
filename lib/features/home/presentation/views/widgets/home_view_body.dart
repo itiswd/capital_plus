@@ -36,7 +36,7 @@ class HomeBody extends ConsumerWidget {
               padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: AppColor.darkBlue,
-                borderRadius: BorderRadius.circular(24.0.r),
+                borderRadius: BorderRadius.circular(kRadius24),
               ),
               child: Column(
                 children: [

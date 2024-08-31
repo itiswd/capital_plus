@@ -53,8 +53,8 @@ class CardsViewBody extends StatelessWidget {
                 color: AppColor.white,
                 border: Border.all(color: AppColor.white),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(36.r),
-                  topRight: Radius.circular(36.r),
+                  topLeft: Radius.circular(kRadius36),
+                  topRight: Radius.circular(kRadius36),
                 ),
               ),
             ),

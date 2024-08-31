@@ -2,9 +2,9 @@
 
 import 'package:capital_plus/core/constants/app_assets.dart';
 import 'package:capital_plus/core/constants/app_colors.dart';
+import 'package:capital_plus/core/constants/app_consts.dart';
 import 'package:capital_plus/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainButton extends StatelessWidget {
@@ -25,7 +25,7 @@ class MainButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(24.0.r),
+          borderRadius: BorderRadius.circular(kRadius24),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16.0),

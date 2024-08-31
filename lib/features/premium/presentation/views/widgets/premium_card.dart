@@ -22,7 +22,7 @@ class PremiumCard extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: AppColor.lightGrey,
-          borderRadius: BorderRadius.circular(24.0.r),
+          borderRadius: BorderRadius.circular(kRadius24),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
